@@ -511,7 +511,6 @@ span.mobile-menu-title{
 -------------------------*/	
 .header-middle{
 	background:#EBEBEB;
-	height: 100px;
 }
 
 .logo a{
@@ -519,14 +518,13 @@ span.mobile-menu-title{
 }
 .categorys-product-search{
 	
-	height: 40px;
-	margin-top: 20px;
-    margin-bottom: 0px;
+	height: 43px;
+	margin-top: 15px;
 	overflow: hidden;
 	padding-right: 15px;
 	padding-top: 0px;
-	width: 500px;
-
+	width: 550px;
+	margin-bottom: 25px;
 }
 .search-form{
 	border:none;
@@ -548,7 +546,7 @@ span.mobile-menu-title{
 	border-left:1px solid #d7d7d7;	
 }
 .search-product{
-	position:relative;
+	position:absolute;
 }
 .search-form-cat{
 	border:1px solid #d7d7d7;
@@ -638,7 +636,8 @@ input.search-form[placeholder]:-ms-input-placeholder {
 	padding-left:5px;
 	
 }
-
+.mainmenu nav{}
+.mainmenu nav ul{}
 .mainmenu nav ul li{
 	padding:0;
 }
@@ -731,7 +730,7 @@ input.search-form[placeholder]:-ms-input-placeholder {
 .drodown-mega-menu .mega-menu-list a.mega-menu-title:hover{
 	color:#FF4F4F;
 }
-
+.mainmenu ul li .drodown-mega-menu .mega-menu-list ul{}
 .mainmenu ul li .drodown-mega-menu .mega-menu-list ul li{
 	border-bottom:1px solid #d7d7d7;
 }
@@ -748,7 +747,7 @@ input.search-form[placeholder]:-ms-input-placeholder {
 	background:inherit;
 	color:#FF4F4F;
 }
-
+.mainmenu ul li .drodown-mega-menu .right-mega{}
 
 .mainmenu nav ul li:hover .drodown-mega-menu{
 	visibility:visible;
@@ -1751,7 +1750,8 @@ body.index-2 .single-left-sidebar h2.left-title{
 body.index-2 .left-category-menu{
 	margin-top:15px;
 }
-
+body.index-2 .left-product-cat{}
+body.index-2 .category-heading{}
 body.index-2 .category-heading h2{
 	background: #c1a300 none repeat scroll 0 0;
 	color: #fff;
@@ -1788,7 +1788,7 @@ body.index-2 .category-menu-list{
 	width: 100%;
 	z-index: 1000;
 }
-
+body.index-2 .category-menu-list ul{}
 body.index-2 .category-menu-list ul li{
 	background: #fff none repeat scroll 0 0;
 	border-bottom: 1px solid #ebebeb;
@@ -1908,7 +1908,7 @@ body.index-2 .category-menu-list ul li .cat-left-drop-menu-single{
 	overflow:hidden;
 	transition: all 0.3s ease 0s;
 }
-
+body.index-2 .category-menu-list ul li .cat-left-drop-menu-single ul{}
 body.index-2 .category-menu-list ul li .cat-left-drop-menu-single ul li{
 	border:none;
 }
@@ -1936,7 +1936,12 @@ body.index-2 .sidebar-best-seller{
 	margin-bottom: 4px;
 	padding-bottom: 0;
 } 
-
+body.index-2 .sidebar-best-seller div.owl-stage-outer{
+} 
+body.index-2 div.sidebar-best-seller div.owl-stage{
+}
+body.index-2 .sidebar-best-seller div.owl-item{
+} 
 body.index-2 .sidebar-best-seller .single-product-item{
 	margin-bottom: 15px;
 	margin-top: 2px;

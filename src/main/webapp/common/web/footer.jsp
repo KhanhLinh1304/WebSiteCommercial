@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
+
 	<section class="footer-top-area">
 			<div class="container">
 				<div class="footer-top-container">
