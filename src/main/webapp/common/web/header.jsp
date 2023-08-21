@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-	<section class="header-top">
+		<section class="header-middle">
 			<div class="container">
 				<div class="row">
 					<!-- HEADER-LEFT-MENU START -->
@@ -10,10 +10,10 @@
 							<a  href="index.html"><h1 style="font-family:Impact; " >Fashion Clothing</h1> </a>
 						</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6" >
+						<div class="col-lg-6 col-md-6 col-sm-6">
 						<div class="categorys-product-search">
 							<form action="#" method="get" class="search-form-cat">
-								<div class="search-product form-group">
+								<div class="search-product form-group" style="position: absolute;">
 									<select name="catsearch" class="cat-search">
 										<option value="">Categories</option>
 								
@@ -27,7 +27,7 @@
 						</div>
 						</div>
 					<div class="col-lg-3 col-md-3 col-sm-3 ">
-								<ul class="list-inline" style="margin-top: 50px; ">
+								<ul class="list-inline" style="margin-top: 25px; ">
 									<li><a style="color: black; font-size:20px ; font-family: 'Times New Roman';" href="cart.html"><b>Đăng Kí</b></a></li>
 									<li><a style="color: black;font-size:20px ; font-family: 'Times New Roman';" href="registration.html"><b>Đăng Nhập</b></a></li>
 								</ul>									

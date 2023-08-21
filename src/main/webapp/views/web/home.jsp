@@ -10,10 +10,9 @@
 <body>
 <!-- -------------------------- Bắt Đầu Sản Phẩm Bán Chạy--------------------------- -->
 <section class="main-content-section">
+<%@include file="/common/web/slides.jsp"%>
 			<div class="container">
 				<div class="row">
-					
-					
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="row">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -28,7 +28,7 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web/cart.jsp");
 		rd.forward(request, response);
 	}
 

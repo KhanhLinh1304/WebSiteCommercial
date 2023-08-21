@@ -92,7 +92,7 @@
 <body class="index-2">
 	<div id="main">
 		<%@include file="/common/web/header.jsp"%>
-		<%@include file="/common/web/slides.jsp" %>
+	
 		<div id="content">
 			<dec:body />
 		</div>
