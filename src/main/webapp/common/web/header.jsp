@@ -95,7 +95,7 @@
 						<div class="mainmenu">
 							<nav>
 								<ul class="list-inline mega-menu">
-									<li class="active"><a href="index.html">Trang Chủ</a>
+									<li class="active"><a href="/Clothing_war/views/web/home.jsp">Trang Chủ</a>
 									</li>
 									<li>
 										<a href="shop-gird.html">Thời Trang Nữ</a>
