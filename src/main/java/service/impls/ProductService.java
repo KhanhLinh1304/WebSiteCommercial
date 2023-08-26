@@ -17,4 +17,10 @@ public class ProductService implements IProductService {
 		// TODO Auto-generated method stub
 		return product.getAllProduct();
 	}
+
+	@Override
+	public List<ProductModel> getAllProductByIdCategory(int idCategory) {
+		
+		return product.getProductByIdCategory(idCategory);
+	}
 }

@@ -19,13 +19,15 @@
 							<div class="product-single-sidebar">
 								<span class="sidebar-title">Brand</span>
 								<ul>
+								<c:forEach items="${sizes}" var="size">
 									<li>
 										<label class="cheker">
 											<input type="checkbox" name="Size"/>
 											<span></span>
 										</label>
-										<a href="#">S<span> (10)</span></a>
+										<a href="#">${size.nameSize}</a>
 									</li>
+									</c:forEach>
 									<li>
 										<label class="cheker">
 											<input type="checkbox" name="Size"/>
@@ -143,10 +145,11 @@
 							<div class="row">
 								<ul class="gategory-product">
 									<!-- SINGLE ITEM START -->
+									<c:forEach items="${products}" var="product">
 									<li class="gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12">
 										<div class="single-product-item">
 											<div class="product-image">
-												<a href="single-product.html"><img src="<c:url value='/template/web/img/product/sale/3.jpg'/>" alt="product-image" /></a>
+												<a href="single-product.html"><img src="${product.urlImg}" alt="product-image" /></a>
 												<a href="single-product.html" class="new-mark-box">new</a>
 												<div class="overlay-content">
 													<ul>
@@ -170,61 +173,15 @@
 														<span>1 Review(s)</span>
 													</div>
 												</div>
-												<a href="single-product.html">Faded Short Sleeves T-shirt</a>
+												<a href="single-product.html">${product.name}</a>
 												<div class="price-box">
-													<span class="price">$16.51</span>
+													<span class="price"><p>${product.price}</p></span>
 												</div>
 											</div>
 										</div>									
 									</li>
 									<!-- SINGLE ITEM END -->
-									<!-- SINGLE ITEM START -->
-								
-									<!-- SINGLE ITEM END -->
-									<!-- SINGLE ITEM START -->									
-									
-									<!-- SINGLE ITEM END -->
-									<!-- SINGLE ITEM START -->									
-									
-									<!-- SINGLE ITEM END -->
-									<!-- SINGLE ITEM START -->									
-																
-									<li class="gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12">
-										<div class="single-product-item">
-											<div class="product-image">
-												<a href="single-product.html"><img src="<c:url value='/template/web/img/product/sale/8.jpg'/>"/></a>
-												<a href="single-product.html" class="new-mark-box">sale!</a>
-												<div class="overlay-content">
-													<ul>
-														<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
-														<li><a href="#" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
-														<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
-														<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
-													</ul>
-												</div>
-											</div>
-											<div class="product-info">
-												<div class="customar-comments-box">
-													<div class="rating-box">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-half-empty"></i>
-														<i class="fa fa-star-half-empty"></i>
-													</div>
-													<div class="review-box">
-														<span>1 Review(s)</span>
-													</div>
-												</div>
-												<a href="single-product.html">Printed Dress</a>
-												<div class="price-box">
-													<span class="price">$23.40</span>
-													<span class="old-price">$26.00</span>
-												</div>
-											</div>
-										</div>									
-									</li>
-									<!-- SINGLE ITEM END -->								
+										</c:forEach>						
 								</ul>
 							</div>
 						</div>
