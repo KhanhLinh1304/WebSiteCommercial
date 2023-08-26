@@ -9,14 +9,15 @@ public class ProductModel {
     private int idCategory;
     private int idBrand;
     public ProductModel(){}
-    public ProductModel(int id, String nameP, int price, String urlImg, int quantity, int idC, int idBrand){
+    public ProductModel(int idP, String nameP, int price, String urlImg, int quantity, int idC, int idBrand){
+        this.idP = idP;
         this.name = nameP;
         this.price = price;
         this.urlImg = urlImg;
         this.quantity = quantity;
         this.idCategory = idC;
         this.idBrand = idBrand;
-        this.idP = id;
+
     }
     
     public int getIdP() {
