@@ -1,6 +1,7 @@
 package model;
 
 public class ProductModel {
+	private int idP;
     private String name;
     private int price;
     private String urlImg;
@@ -8,15 +9,23 @@ public class ProductModel {
     private int idCategory;
     private int idBrand;
     public ProductModel(){}
-    public ProductModel(String nameP, int price, String urlImg, int quantity, int idC, int idBrand){
+    public ProductModel(int id, String nameP, int price, String urlImg, int quantity, int idC, int idBrand){
         this.name = nameP;
         this.price = price;
         this.urlImg = urlImg;
         this.quantity = quantity;
         this.idCategory = idC;
         this.idBrand = idBrand;
+        this.idP = id;
     }
-    public String getName(){
+    
+    public int getIdP() {
+		return idP;
+	}
+	public void setIdP(int idP) {
+		this.idP = idP;
+	}
+	public String getName(){
         return name;
     }
     public void setName(String name){

@@ -11,7 +11,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet( "/web-home")
+@WebServlet(urlPatterns = "/web-home")
+
 public class HomeController extends HttpServlet {
 
 	private static final long serialVersionUID = 7051830843985824356L;
@@ -20,12 +21,13 @@ public class HomeController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		List<ProductModel> products = productService.getAllProduct();
 		request.setAttribute("products",products);
 	    RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
         rd.forward(request,response);
 	}
-
+	
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
