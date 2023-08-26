@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/web-home")
+@WebServlet( "/web-home")
 public class HomeController extends HttpServlet {
 
 	private static final long serialVersionUID = 7051830843985824356L;

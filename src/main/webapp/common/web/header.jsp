@@ -12,13 +12,13 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6">
 						<div class="categorys-product-search">
-							<form action="#" method="get" class="search-form-cat">
+							<form action="/searchProduct" method="post" class="search-form-cat">
 								<div class="search-product form-group" style="position: absolute;">
 									<select name="catsearch" class="cat-search">
 										<option value="">Categories</option>
 								
 									</select>
-									<input type="text" class="form-control search-form" name="s" placeholder="Enter your search key ... " />
+									<input type="text" class="form-control search-form" name="input" placeholder="Enter your search key ... " />
 									<button class="search-button" value="Search" name="s" type="submit">
 										<i class="fa fa-search"></i>
 									</button>									 

@@ -62,4 +62,16 @@ public class ProductModel {
     public void setIdBrand(int idBrand) {
         this.idBrand = idBrand;
     }
+
+    @Override
+    public String toString() {
+        return "ProductModel{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", urlImg='" + urlImg + '\'' +
+                ", quantity=" + quantity +
+                ", idCategory=" + idCategory +
+                ", idBrand=" + idBrand +
+                "}\n";
+    }
 }

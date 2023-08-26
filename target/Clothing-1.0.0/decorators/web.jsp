@@ -98,8 +98,7 @@
 		</div>
 		<%@include file="/common/web/footer.jsp"%>
 	</div>
-	
-	
+	<script src="<c:url value='/template/web/js/jquery-3.6.1.min.js'/>"/></script>
 	<script src="<c:url value='/template/web/js/vendor/jquery-1.11.3.min.js'/>"/></script>
 
 	<!-- fancybox js -->
