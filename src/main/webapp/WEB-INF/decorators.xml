@@ -15,4 +15,7 @@
 	<decorator name="register" page="register.jsp">
 		<pattern>/register*</pattern>
 	</decorator>
+	<decorator name="ajax" page="ajax.jsp">
+		<pattern>/filterProduct</pattern>
+	</decorator>
 </decorators>

@@ -7,6 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
+
 <section class="header-middle">
 	<div class="container">
 	<%CategoryDAO categorySV = new CategoryDAO();
@@ -21,7 +22,7 @@
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="categorys-product-search" style="width: 500px;">
-					<form action="#" method="get" class="search-form-cat">
+					<form action="/searchProduct" method="post" class="search-form-cat">
 						<div class="search-product form-group" style="position: absolute;">
 							<select name="catsearch" class="cat-search">
 							 <option value=""> categories</option>
@@ -31,7 +32,7 @@
 								<option value="<%=category.getNameCategory()%>"><%=category.getNameCategory() %></option>
 								<%} %>
 
-							</select> <input type="text" class="form-control search-form" name="s"
+							</select> <input type="text" class="form-control search-form" name="input"
 								placeholder="Enter your search key ... " />
 							<button class="search-button" value="Search" name="s"
 								type="submit">

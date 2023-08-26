@@ -1,6 +1,7 @@
 package model;
 
 public class SizeModel {
+
 	private int idSize;
 	private String nameSize;
 	public SizeModel() {
@@ -24,6 +25,5 @@ public class SizeModel {
 	public void setNameSize(String nameSize) {
 		this.nameSize = nameSize;
 	}
-	
 
 }

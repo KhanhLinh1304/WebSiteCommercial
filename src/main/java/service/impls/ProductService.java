@@ -1,5 +1,6 @@
 package service.impls;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,8 +20,20 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
+
+	public List<ProductModel> searchProduct(String input) {
+		return product.searchProduct(input);
+	}
+
+	@Override
+	public List<ProductModel> filterProduct(String s, String m, String l, String xl, String xxl) {
+		return product.filterProduct(s,m,l,xl,xxl);
+	}
+
+
 	public List<ProductModel> getAllProductByIdCategory(int idCategory) {
 		
 		return product.getProductByIdCategory(idCategory);
 	}
+
 }

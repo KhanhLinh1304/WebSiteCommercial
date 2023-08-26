@@ -10,7 +10,7 @@
 <body>
 <section class="main-content-section" style="margin-top: 20px">
 			<div class="container">
-				
+
 				<div class="row">
 					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 						<!-- PRODUCT-LEFT-SIDEBAR START -->
@@ -18,47 +18,63 @@
 							<h2 class="left-title pro-g-page-title">Catalog</h2>
 							<div class="product-single-sidebar">
 								<span class="sidebar-title">Brand</span>
-								<ul>
-								<c:forEach items="${sizes}" var="size">
-									<li>
-										<label class="cheker">
-											<input type="checkbox" name="Size"/>
-											<span></span>
-										</label>
-										<a href="#">${size.nameSize}</a>
-									</li>
-									</c:forEach>
-									<li>
-										<label class="cheker">
-											<input type="checkbox" name="Size"/>
-											<span></span>
-										</label>
-										<a href="#">m<span> (10)</span></a>
-									</li>
-									<li>
-										<label class="cheker">
-											<input type="checkbox" name="Size"/>
-											<span></span>
-										</label>
-										<a href="#">l<span> (10)</span></a>
-									</li>
-								</ul>
+								<form action="" class="size">
+									<ul>
+										<li>
+											<label class="cheker">
+												<input type="checkbox" name="s" class="checkbox"/>
+												<span></span>
+											</label>
+											<a href="#">S<span> (10)</span></a>
+										</li>
+										<li>
+											<label class="cheker">
+												<input type="checkbox" name="m" class="checkbox"/>
+												<span></span>
+											</label>
+											<a href="#">m<span> (10)</span></a>
+										</li>
+										<li>
+											<label class="cheker">
+												<input type="checkbox" name="l" class="checkbox"/>
+												<span></span>
+											</label>
+											<a href="#">l<span> (10)</span></a>
+										</li>
+										<li>
+											<label class="cheker">
+												<input type="checkbox" name="xl" class="checkbox"/>
+												<span></span>
+											</label>
+											<a href="#">xl<span> (10)</span></a>
+										</li>
+										<li>
+											<label class="cheker">
+												<input type="checkbox" name="xxl" class="checkbox"/>
+												<span></span>
+											</label>
+											<a href="#">xxl<span> (10)</span></a>
+										</li>
+									</ul>
+								</form>
+
+
 							</div>
-						
+
 							<div class="product-single-sidebar">
 								<span class="sidebar-title">Price</span>
 								<ul>
-									<li> 
+									<li>
 										<label><strong>Range:</strong><input type="text" id="slidevalue" /></label>
 									</li>
 									<li>
-										<div id="price-range"></div>	
+										<div id="price-range"></div>
 									</li>
 								</ul>
 							</div>
-						
+
 						</div>
-					
+
 						<!-- SINGLE SIDEBAR TAG END -->
 					</div>
 					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
@@ -86,7 +102,7 @@
 												<option value="">In stock</option>
 												<option value="">Reference: Lowest first</option>
 												<option value="">Reference: Highest first</option>
-											</select>												
+											</select>
 										</div>
 									</div>
 									<!-- SHOORT-BY END -->
@@ -97,13 +113,13 @@
 											<select name="show" id="perPage">
 												<option value="">11</option>
 												<option value="">12</option>
-											</select>													
+											</select>
 										</div>
-										<span>per page</span>										
+										<span>per page</span>
 									</div>
 									<!-- SHOW-PAGE END -->
 									<!-- VIEW-SYSTEAM START -->
-									
+
 									<!-- VIEW-SYSTEAM END -->
 								</div>
 								<!-- PRODUCT-SHOOTING-RESULT START -->
@@ -178,10 +194,12 @@
 													<span class="price"><p>${product.price}</p></span>
 												</div>
 											</div>
-										</div>									
+										</div>
 									</li>
 									<!-- SINGLE ITEM END -->
-										</c:forEach>						
+
+									</c:forEach>
+
 								</ul>
 							</div>
 						</div>
@@ -216,11 +234,30 @@
 									<button class="btn showall-button">Show all</button>
 								</form>
 							</div>
-						</div>	
+						</div>
 						<!-- PRODUCT-SHOOTING-RESULT END -->
 					</div>
 				</div>
 			</div>
 		</section>
+<script src="<c:url value='/template/web/js/jquery-3.6.1.min.js'/>"/></script>
+<script>
+	$('.checkbox').click(function () {
+		let data = $('.size').serialize();
+		$.ajax({
+			url: '/filterProduct',
+			type: 'post',
+			data: {
+				data : data
+			},
+			success: function (response) {
+				$('.gategory-product').html(response)
+			},
+			error: function () {
+				alert("Error")
+			}
+		})
+	})
+</script>
 </body>
 </html>
