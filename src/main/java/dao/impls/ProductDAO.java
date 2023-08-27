@@ -78,20 +78,21 @@ public class ProductDAO implements IProductDAO {
     }
 
     @Override
-    public List<ProductModel> filterProduct(String s, String m, String l, String xl, String xxl) {
+    public List<ProductModel> filterProduct(int categoryId,String s, String m, String l, String xl, String xxl) {
         List<ProductModel> list = new ArrayList<>();
         String sql = "SELECT product.*\n" +
                 "FROM product_color_size JOIN product ON product.product_id = product_color_size.product_id JOIN size ON product_color_size.size_id = size.size_id\n" +
-                "WHERE size_name = ? OR size_name = ? OR size_name = ? OR size_name = ? OR size_name = ?\n" +
+                "WHERE product.category_id = ? AND (size_name = ? OR size_name = ? OR size_name = ? OR size_name = ? OR size_name = ?)\n" +
                 "GROUP BY product.product_id\n";
         try {
             conn = DBConnect.getInstall().get().getConnection();
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, s);
-            preparedStatement.setString(2, m);
-            preparedStatement.setString(3, l);
-            preparedStatement.setString(4, xl);
-            preparedStatement.setString(5, xxl);
+            preparedStatement.setInt(1,categoryId);
+            preparedStatement.setString(2, s);
+            preparedStatement.setString(3, m);
+            preparedStatement.setString(4, l);
+            preparedStatement.setString(5, xl);
+            preparedStatement.setString(6, xxl);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 list.add(new ProductModel(resultSet.getInt(1),
@@ -168,12 +169,14 @@ public class ProductDAO implements IProductDAO {
 		return products;
 	}
 	 public static void main(String[] args) {
-	    	CategoryDAO dao = new CategoryDAO();
-			   List<CategoryModel> categories = dao.getCategory();
-			   for(CategoryModel cat: categories ) {
-				   System.out.println(cat.getNameCategory());
-			   }
-		}
+
+         String a ="";
+         String clone = String.valueOf(123);
+         for (int i = clone.length() -1; i>= 0; i--) {
+             a += clone.charAt(i);
+         }
+         System.out.println(Long.parseLong(a));
+    }
 
 
 }

@@ -25,9 +25,13 @@ public class FilterProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String data = request.getParameter("data");
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         List<String> size = Arrays.asList(data.split("&"));
         String s=null,m=null,l=null,xl=null,xxl=null;
         for (int i = 0; i < size.size(); i++) {
+            if (size.get(i).equals("all=on")) {
+                s="s";m="m";l="l";xl="xl";xxl="xxl";
+            }
             if (size.get(i).equals("s=on"))
                 s="s";
             if (size.get(i).equals("m=on"))
@@ -39,7 +43,7 @@ public class FilterProduct extends HttpServlet {
             if (size.get(i).equals("xxl=on"))
                 xxl="xxl";
         }
-        List<ProductModel> list = productService.filterProduct(s,m,l,xl,xxl);
+        List<ProductModel> list = productService.filterProduct( categoryId,s,m,l,xl,xxl);
 //        request.setAttribute("products", list);
 //        request.getRequestDispatcher("/views/ajax/listProduct.jsp").forward(request,response);
         for (int i = 0; i < list.size(); i++) {
