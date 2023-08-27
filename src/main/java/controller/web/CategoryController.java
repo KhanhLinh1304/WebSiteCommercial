@@ -13,11 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.BrandModel;
 import model.ProductModel;
-import model.SizeModel;
 import service.IBrandService;
-import service.ICategoryService;
 import service.IProductService;
-import service.ISizeService;
+
 
 /**
  * Servlet implementation class CategoryController
@@ -28,8 +26,7 @@ public class CategoryController extends HttpServlet {
 	private IProductService productSv;
 	@Inject
 	private IBrandService brandSV;
-	@Inject
-	private ISizeService sizeSV;
+
 	private static final long serialVersionUID = 1L;
   
     public CategoryController() {
@@ -42,10 +39,8 @@ public class CategoryController extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("categoryId"));
 		List<ProductModel> products = productSv.getAllProductByIdCategory(id);
 		List<BrandModel> brands = brandSV.getAllBrand();
-		List<SizeModel> sizes = sizeSV.getAllSize();
 		request.setAttribute("products", products);
 		request.setAttribute("brands", brands);
-		request.setAttribute("sizes", sizes);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/category.jsp");
 		rd.forward(request, response);
 	         

@@ -145,7 +145,7 @@
 
 							<c:forEach items="${list}" var="product">
 								<!-- SINGLE ITEM START -->
-								<li class="gategory-product-list col-md-4 col-sm-6 col-xs-12">
+								<li class="gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12">
 									<div class="single-product-item">
 										<div class="product-image">
 											<a href="single-product.html"><img src="${product.getUrlImg()}" alt="product-image" /></a>
