@@ -523,7 +523,7 @@ span.mobile-menu-title{
 	overflow: hidden;
 	padding-right: 15px;
 	padding-top: 0px;
-	width: 550px;
+	width: 500px;
 	margin-bottom: 25px;
 }
 .search-form{
@@ -2329,26 +2329,31 @@ ul.filtering-menu{
 	margin-top: 3px;
 	width: 72%;
 }
-.cheker{
+.cheker,
+.all{
 	float: left;
 	margin-bottom: 0;
 	margin-right: 8px;
 	margin-top: 3px;
 }
-.cheker input{
+.cheker input,
+.all input{
 	display: none;
 }
-.cheker span{
+.cheker span,
+.all span{
 	background: rgba(0, 0, 0, 0) url("img/sprite.png") no-repeat scroll 0px -257px;
 	display: block;
 	height: 15px;
 	width: 15px;
 }
 
-.cheker input:checked + span {
+.cheker input:checked + span,
+.all input:checked + span{
 	background: rgba(0, 0, 0, 0) url("img/sprite.png") no-repeat scroll -15px -257px;
 }
-.cheker span:hover{
+.cheker span:hover,
+.all span:hover{
 	background: rgba(0, 0, 0, 0) url("img/sprite.png") no-repeat scroll -30px -257px;
 }
 

@@ -26,8 +26,8 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public List<ProductModel> filterProduct(String s, String m, String l, String xl, String xxl) {
-		return product.filterProduct(s,m,l,xl,xxl);
+	public List<ProductModel> filterProduct(int categoryId ,String s, String m, String l, String xl, String xxl) {
+		return product.filterProduct(categoryId,s,m,l,xl,xxl);
 	}
 
 
