@@ -50,6 +50,9 @@
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
 						href="#"><b>${account.getEmail()}</b></a></li>
+						<li><a
+						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
+						href="logout"><b>Đăng Xuất</b></a></li>
 				</ul>
 			</div>
 			</c:when>
@@ -58,7 +61,7 @@
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="cart.html"><b>Đăng Kí</b></a></li>
+						href="register"><b>Đăng Kí</b></a></li>
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
 						href="login"><b>Đăng Nhập</b></a></li>
