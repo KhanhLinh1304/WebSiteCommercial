@@ -11,6 +11,7 @@ public interface IProductService {
 	List<ProductModel> filterProduct(String s, String m, String l, String xl, String xxl);
 
 	List<ProductModel> getAllProductByIdCategory(int idCategory);
+	ProductModel getProductById(int idProduct);
 	
 
 }

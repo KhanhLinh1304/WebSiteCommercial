@@ -11,46 +11,48 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.BrandModel;
+import dao.ISizeColorDAO;
 import model.ProductModel;
-import model.SizeModel;
-import service.IBrandService;
-import service.ICategoryService;
+import model.SizeColorModel;
 import service.IProductService;
 import service.ISizeColorService;
 
 /**
- * Servlet implementation class CategoryController
+ * Servlet implementation class DetailProductController
  */
-@WebServlet("/CategoryController")
-public class CategoryController extends HttpServlet {
+@WebServlet("/detailProduct")
+public class DetailProductController extends HttpServlet {
 	@Inject
-	private IProductService productSv;
+	private IProductService productSV;
 	@Inject
-	private IBrandService brandSV;
-	@Inject
-	private ISizeColorService sizeSV;
+	private ISizeColorService scService;
 	private static final long serialVersionUID = 1L;
-  
-    public CategoryController() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DetailProductController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("categoryId"));
-		List<ProductModel> products = productSv.getAllProductByIdCategory(id);
-		List<BrandModel> brands = brandSV.getAllBrand();
-		List<SizeModel> sizes = sizeSV.getAllSize();
-		request.setAttribute("products", products);
-		request.setAttribute("brands", brands);
-		request.setAttribute("sizes", sizes);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/category.jsp");
+		int productId = Integer.parseInt(request.getParameter("idProduct"));
+		ProductModel product = productSV.getProductById(productId);
+		List<SizeColorModel> lists = scService.getSizeByIdProduct(productId);
+		request.setAttribute("lists", lists);
+		request.setAttribute("product", product);
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web/detail.jsp");
 		rd.forward(request, response);
-	         
+		
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

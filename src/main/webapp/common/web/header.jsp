@@ -16,7 +16,7 @@
 			<!-- HEADER-LEFT-MENU START -->
 			<div class="col-lg-3 col-md-3 col-sm-3 ">
 				<div style="margin-top: 25px;">
-					<a href="index.html"><h1 style="font-family: Impact;">Fashion
+					<a href="/web-home"><h1 style="font-family: Impact;">Fashion
 							Clothing</h1> </a>
 				</div>
 			</div>
@@ -42,6 +42,18 @@
 					</form>
 				</div>
 			</div>
+			<c:set var="account" value="${sessionScope.account}"></c:set>
+			<c:choose>
+			<c:when test="${account != null}">
+			<div class="col-lg-3 col-md-3 col-sm-3 ">
+				<ul class="list-inline" style="margin-top: 25px;">
+					<li><a
+						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
+						href="#"><b>${account.getEmail()}</b></a></li>
+				</ul>
+			</div>
+			</c:when>
+			<c:when test="${account == null}">
 			<div class="col-lg-3 col-md-3 col-sm-3 ">
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
@@ -49,12 +61,13 @@
 						href="cart.html"><b>Đăng Kí</b></a></li>
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="registration.html"><b>Đăng Nhập</b></a></li>
+						href="/login"><b>Đăng Nhập</b></a></li>
 				</ul>
-
-
-				<!-- HEADER-RIGHT-MENU END -->
 			</div>
+			</c:when>
+			</c:choose>
+			
+		</div>
 		</div>
 </section>
 <header class="main-menu-area">
@@ -121,7 +134,7 @@
 					<nav>
 						<ul class="list-inline mega-menu">
 							<li class="active"><a href="web-home">Trang Chủ</a></li>
-							<li><a href="shop-gird.html">Thời Trang Áo </a> <!-- DRODOWN-MEGA-MENU START -->
+							<li><a href="/">Thời Trang Áo </a> <!-- DRODOWN-MEGA-MENU START -->
 								<div class="drodown-mega-menu">
 									<%
 									

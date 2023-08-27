@@ -24,7 +24,7 @@
 								class="gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12">
 								<div class="single-product-item">
 									<div class="product-image">
-										<a href="single-product.html"><img
+										<a href="/detailProduct?idProduct=${product.idP}"><img
 											src="${product.urlImg}" alt="product-image" /></a> <a
 											href="#" class="new-mark-box">new</a>
 										<div class="overlay-content">
@@ -51,7 +51,7 @@
 												<span>1 Review(s)</span>
 											</div>
 										</div>
-										<a href="single-product.html">${product.name}</a>
+										<a href="/detailProduct?idProduct=${product.idP}">${product.name}</a>
 										<div class="price-box">
 											<span class="price">${product.price}</span>
 										</div>

@@ -46,8 +46,31 @@ public class ProductDAO implements IProductDAO {
 
     @Override
     public ProductModel getProductById(int idProduct) {
+    	ProductModel product = new ProductModel();
+    	String query = "select * from product where product_id = ?";
+    	try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1, idProduct);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				int id = resultSet.getInt(1);
+	               String name =  resultSet.getString(2);
+	               int price = resultSet.getInt(3);
+	               String image = resultSet.getString(4);
+	               int quantity = resultSet.getInt(5);
+	               int categoryId = resultSet.getInt(6);
+	               int brandId = resultSet.getInt(7);
+	                product = new ProductModel(id,name,price,image,quantity,categoryId,brandId);
+	               
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
-        return null;
+        return product;
     }
 
 
