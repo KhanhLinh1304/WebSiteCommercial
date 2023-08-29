@@ -286,7 +286,6 @@
             $('.all>input').prop('checked', allChecked);
         }
         let data = $('.size').serialize();
-        console.log(data)
         $.ajax({
             url: '/filterProduct',
             type: 'post',

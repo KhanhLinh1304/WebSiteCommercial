@@ -21,7 +21,7 @@
 									<div class="tab-content">
 										<div class="tab-pane active" id="thumbnail_1">
 											<div class="single-product-image">
-												<a href="#"><img src="<c:url value='/template/web/img/product/sale/8.jpg'/>"/></a>
+												<a href="#"><img src="${product.urlImg }"/></a>
 												<a class="new-mark-box" href="#">new</a>
 											
 											</div>	
@@ -33,7 +33,7 @@
 							</div>
 							<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
 								<div class="single-product-descirption">
-									<h2>Faded Short Sleeves T-shirt</h2>
+									<h2>${product.name}</h2>
 									
 									<div class="single-product-review-box">
 										<div class="rating-box">
@@ -52,7 +52,7 @@
 									</div>
 								
 									<div class="single-product-price">
-										<h2>$16.51</h2>
+										<h2><p>${product.price}đ</p></h2>
 									</div>
 									
 									<div class="single-product-quantity">
@@ -65,16 +65,21 @@
 									</div>
 									<div class="single-product-size">
 										<p class="small-title">Size </p> 
-										<select name="product-size" id="product-size" >
-											<option value="">S</option>
-											<option value="">M</option>
-											<option value="">L</option>
+										<c:forEach items = "${lists}" var="size">
+											<input type="radio" id="html" name="size" value="${size.nameSize}">
+                                          <label for="html">${size.nameSize}</label>
+												</c:forEach>
 										</select>
+									
 									</div>
 									<div class="single-product-color">
 										<p class="small-title">Color </p> 
-										<a href="#"><span></span></a>
-										<a class="color-blue" href="#"><span></span></a>
+										<c:forEach items="${lists}" var="color">
+										
+										<input type="radio" id="html" name="color" value="${color.nameColor}">
+                                          <label for="html">${color.nameColor}</label>
+                                          </c:forEach>
+                                       
 									</div>
 									<div class="single-product-add-cart">
 										<a class="add-cart-text" title="Add to cart" href="#">Add to cart</a>
