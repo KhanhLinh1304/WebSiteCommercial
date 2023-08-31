@@ -49,7 +49,7 @@
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="#"><b>${account.getEmail()}</b></a></li>
+						href="user"><b>${account.getEmail()}</b></a></li>
 						<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
 						href="logout"><b>Đăng Xuất</b></a></li>
