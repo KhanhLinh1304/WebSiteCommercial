@@ -15,7 +15,7 @@
 	<decorator name="register" page="signup.jsp">
 		<pattern>/register</pattern>
 	</decorator>
-	<decorator name="send-mail-register" page="sendCodeRegister.jsp">
-		<pattern>/send-mail-register</pattern>
+	<decorator name="form" page="form.jsp">
+		<pattern>/form-*</pattern>
 	</decorator>
 </decorators>

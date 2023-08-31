@@ -44,7 +44,7 @@ public class RegisterController extends HttpServlet {
             session.setAttribute("email", email);
             session.setAttribute("password", password);
             session.setAttribute("code", code);
-            response.sendRedirect("/send-mail-register");
+            response.sendRedirect("/form-send-mail-register");
         }
     }
 }
