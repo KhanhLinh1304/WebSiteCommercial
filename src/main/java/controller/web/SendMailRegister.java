@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "send-mail-register", value = "/send-mail-register")
+@WebServlet(name = "form-send-mail-register", value = "/form-send-mail-register")
 public class SendMailRegister extends HttpServlet {
     @Inject
     IAccountService accountService;
@@ -28,7 +28,7 @@ public class SendMailRegister extends HttpServlet {
             request.setAttribute("error","<div class=\"alert alert-danger\" role=\"alert\">\n" +
                     "  Mật OTP không đúng!\n" +
                     "</div>");
-            request.getRequestDispatcher("/views/web/sendCodeRegister.jsp").forward(request,response);
+            request.getRequestDispatcher("/views/web/s").forward(request,response);
         } else {
             accountService.registerAccount(email,password);
             AccountModel account = accountService.loginAccount(email, password);
@@ -36,7 +36,6 @@ public class SendMailRegister extends HttpServlet {
             session.setAttribute("account", account);
             response.sendRedirect("web-home");
         }
-
 
     }
 }

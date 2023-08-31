@@ -15,14 +15,15 @@
 					<div class="row justify-content-center">
 						<div class="col-md-12">
 							<div class="form-block">
-								<c:if test="${notify != null }">
-									<p>${notify}</p>
-								</c:if>
+
 								<div class="mb-4">
 									<h3>
 										<strong>LOGIN TO SHOP</strong>
 									</h3>
 								</div>
+								<c:if test="${notify != null }">
+									<p>${notify}</p>
+								</c:if>
 								<form action="login" method="post">
 									<div class="form-group first">
 										<label for="username">email</label> <input type="email"
@@ -39,7 +40,7 @@
 										<label class="control control--checkbox mb-0"><span
 											class="caption">Remember me</span> <input type="checkbox"
 											checked="checked" /> </label> <span class="ml-auto"><a
-											href="#" class="forgot-pass">Forgot Password</a></span>
+											href="/form-forgot-password" class="forgot-pass">Forgot Password</a></span>
 									</div>
 
 									<input type="submit" value="Log In"

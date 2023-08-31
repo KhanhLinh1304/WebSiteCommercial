@@ -53,6 +53,16 @@ public class AccountModel {
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "AccountModel{" +
+				"userId=" + userId +
+				", email='" + email + '\'' +
+				", pass='" + pass + '\'' +
+				", phone='" + phone + '\'' +
+				", address='" + address + '\'' +
+				", roleId=" + roleId +
+				'}';
+	}
 }

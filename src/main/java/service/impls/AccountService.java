@@ -30,4 +30,14 @@ private IAccountDAO accountDAO;
 		accountDAO.sendMailResgiter(email, code);
 	}
 
+	@Override
+	public void forgotPassword(String email, int code) {
+		accountDAO.forgotPassword(email, code);
+	}
+
+	@Override
+	public void changePassword(String email, String password) {
+		accountDAO.changePassword(email,password);
+	}
+
 }
