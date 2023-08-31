@@ -15,4 +15,19 @@ private IAccountDAO accountDAO;
 		return accountDAO.loginAccount(email, pass);
 	}
 
+	@Override
+	public AccountModel checkAccountExist(String email) {
+		return accountDAO.checkAccountExist(email);
+	}
+
+	@Override
+	public void registerAccount(String email, String password) {
+		accountDAO.registerAccount(email, password);
+	}
+
+	@Override
+	public void sendMailResgiter(String email, int code) {
+		accountDAO.sendMailResgiter(email, code);
+	}
+
 }
