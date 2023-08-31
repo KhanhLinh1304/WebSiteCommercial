@@ -19,7 +19,6 @@ public class FilterProduct extends HttpServlet {
     IProductService productService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     @Override
@@ -28,24 +27,25 @@ public class FilterProduct extends HttpServlet {
         int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         List<String> size = Arrays.asList(data.split("&"));
         String s=null,m=null,l=null,xl=null,xxl=null;
+        List<ProductModel> list = null;
         for (int i = 0; i < size.size(); i++) {
             if (size.get(i).equals("all=on")) {
-                s="s";m="m";l="l";xl="xl";xxl="xxl";
+                list = productService.getAllProductByIdCategory(categoryId);
+            } else {
+                if (size.get(i).equals("s=on"))
+                    s="s";
+                if (size.get(i).equals("m=on"))
+                    m="m";
+                if (size.get(i).equals("l=on"))
+                    l="l";
+                if (size.get(i).equals("xl=on"))
+                    xl="xl";
+                if (size.get(i).equals("xxl=on"))
+                    xxl="xxl";
+                list = productService.filterProduct( categoryId,s,m,l,xl,xxl);
             }
-            if (size.get(i).equals("s=on"))
-                s="s";
-            if (size.get(i).equals("m=on"))
-                m="m";
-            if (size.get(i).equals("l=on"))
-                l="l";
-            if (size.get(i).equals("xl=on"))
-                xl="xl";
-            if (size.get(i).equals("xxl=on"))
-                xxl="xxl";
         }
-        List<ProductModel> list = productService.filterProduct( categoryId,s,m,l,xl,xxl);
-//        request.setAttribute("products", list);
-//        request.getRequestDispatcher("/views/ajax/listProduct.jsp").forward(request,response);
+
         for (int i = 0; i < list.size(); i++) {
             response.getWriter().println("<li\n" +
                     "            class=\"gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12\">\n" +

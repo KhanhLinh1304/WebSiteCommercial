@@ -42,19 +42,34 @@
 					</form>
 				</div>
 			</div>
+			<c:set var="account" value="${sessionScope.account}"></c:set>
+			<c:choose>
+			<c:when test="${account != null}">
 			<div class="col-lg-3 col-md-3 col-sm-3 ">
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="cart.html"><b>Đăng Kí</b></a></li>
+						href="user"><b>${account.getEmail()}</b></a></li>
+						<li><a
+						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
+						href="logout"><b>Đăng Xuất</b></a></li>
+				</ul>
+			</div>
+			</c:when>
+			<c:when test="${account == null}">
+			<div class="col-lg-3 col-md-3 col-sm-3 ">
+				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="registration.html"><b>Đăng Nhập</b></a></li>
+						href="register"><b>Đăng Kí</b></a></li>
+					<li><a
+						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
+						href="login"><b>Đăng Nhập</b></a></li>
 				</ul>
-
-
-				<!-- HEADER-RIGHT-MENU END -->
 			</div>
+			</c:when>
+			</c:choose>
+		</div>
 		</div>
 </section>
 <header class="main-menu-area">

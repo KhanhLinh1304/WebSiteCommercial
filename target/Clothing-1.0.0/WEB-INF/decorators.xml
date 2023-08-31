@@ -12,10 +12,10 @@
 	<decorator name="login" page="login.jsp">
 		<pattern>/login</pattern>
 	</decorator>
-	<decorator name="register" page="register.jsp">
-		<pattern>/register*</pattern>
+	<decorator name="register" page="signup.jsp">
+		<pattern>/register</pattern>
 	</decorator>
-	<decorator name="ajax" page="ajax.jsp">
-		<pattern>/filterProduct</pattern>
+	<decorator name="form" page="form.jsp">
+		<pattern>/form-*</pattern>
 	</decorator>
 </decorators>
