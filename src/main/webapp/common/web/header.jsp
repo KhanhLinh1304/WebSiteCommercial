@@ -22,7 +22,7 @@
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="categorys-product-search" style="width: 500px;">
-					<form action="/searchProduct" method="post" class="search-form-cat">
+					<form action="searchProduct" method="post" class="search-form-cat">
 						<div class="search-product form-group" style="position: absolute;">
 							<select name="catsearch" class="cat-search">
 							 <option value=""> categories</option>
@@ -49,7 +49,7 @@
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
-						href="#"><b>${account.getEmail()}</b></a></li>
+						href="user"><b>${account.getEmail()}</b></a></li>
 						<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
 						href="logout"><b>Đăng Xuất</b></a></li>

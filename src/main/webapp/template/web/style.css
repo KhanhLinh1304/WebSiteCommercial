@@ -253,49 +253,12 @@ div.owl-controls{
 	top: -60px;
 	width: 71px;
 }
-.owl-theme .owl-controls .owl-buttons div {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border-radius: 30px;
-  color: #fff;
-  display: inline-block;
-  float: left;
-  font-size: 12px;
-  margin:0 0px 0 4px;
-  opacity: 1;
-  padding: 0;
-}
-div.owl-nav .owl-prev{
-	float: left;
-	color:#fff;
-}
-i.owl-prev-icon{
-	border: 2px solid #3a3d42;
-	color: #818181;
-	font-size: 16px;
-	line-height: 21px;
-	text-align: center;
-	transition: all 0.3s ease 0s;
-	width: 25px;
-	height: 25px;
-}
-i.owl-prev-icon:hover, i.owl-next-icon:hover{
-	color: #FF4F4F;
-	border: 2px solid #FF4F4F;
-}
-div.owl-nav .owl-next{
-	float: right;
-	color:#fff;
-}
-i.owl-next-icon{
-	border: 2px solid #3a3d42;
-	color: #818181;
-	font-size: 16px;
-	line-height: 21px;
-	text-align: center;
-	transition: all 0.3s ease 0s;
-	width: 25px;
-	height: 25px;
-}
+
+
+
+
+
+
 /*-----------------------
 2.5 page-title
 -------------------------*/	
@@ -358,7 +321,7 @@ span.mobile-menu-title{
 .meanmenu-reveal{
 	float:right;
 }
-.mean-container a.meanmenu-reveal span{}
+
 .mean-container .mean-nav ul li{
 	background: #fff none repeat scroll 0 0;
 	border-bottom: 1px solid #eaeaea;
@@ -2423,13 +2386,11 @@ i.color-pink{
 13.2 product page right
  -------------------------*/
 .right-all-product{}
-ul.gategory-product{}
+
 ul.gategory-product li.gategory-product-list{
 	padding:14px 15px 17px;
 }
-ul.gategory-product li.gategory-product-list div.single-product-item .overlay-content ul li a{
-	width:50px;
-}
+
 .product-category-header{}
 .category-header-image{
 	position: relative;
@@ -2462,7 +2423,7 @@ ul.gategory-product li.gategory-product-list div.single-product-item .overlay-co
 	line-height: 19px;
 	margin: -1px 0 0;
 }
-.product-category-title{}
+
 .product-category-title h1{
 	color: #555454;
 	font-family: 'Bitter', serif;
@@ -2528,7 +2489,7 @@ ul.gategory-product li.gategory-product-list div.single-product-item .overlay-co
 	font-size:12px;
 	padding-left:5px;
 }
-.short-select-option select option{}
+
 .show-page{
 	float: left;
 	margin-right: 20px;
@@ -2562,7 +2523,7 @@ ul.gategory-product li.gategory-product-list div.single-product-item .overlay-co
 	font-size:12px;
 	padding-left:5px;
 }
-.s-page-select-option select option{}
+
 .show-page span{
 	font-size:13px;
 	line-height:25px;
@@ -2587,7 +2548,7 @@ ul.gategory-product li.gategory-product-list div.single-product-item .overlay-co
 	font-size: 11px;
 	line-height: 14px;
 }
-.view-systeam ul li a{}
+
 .view-systeam ul li a i{
 	color: #e1e0e0;
 	font-size: 24px;

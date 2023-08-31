@@ -16,7 +16,7 @@ public class AccountDAO implements IAccountDAO{
 
 	@Override
 	public AccountModel loginAccount(String email, String pass) {
-		AccountModel account = new AccountModel();
+		AccountModel account = null;
 		String query = "select * from user where email = ? and password = ?";
 		try {
 			conn = DBConnect.getInstall().get().getConnection();

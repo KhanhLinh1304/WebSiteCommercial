@@ -15,7 +15,11 @@ import java.util.StringTokenizer;
 
 @WebServlet(name = "filterProduct", value = "/filterProduct")
 public class FilterProduct extends HttpServlet {
-    @Inject
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Inject
     IProductService productService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
