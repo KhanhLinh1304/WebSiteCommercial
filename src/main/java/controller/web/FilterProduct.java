@@ -19,7 +19,6 @@ public class FilterProduct extends HttpServlet {
     IProductService productService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     @Override
@@ -47,8 +46,6 @@ public class FilterProduct extends HttpServlet {
             }
         }
 
-//        request.setAttribute("products", list);
-//        request.getRequestDispatcher("/views/ajax/listProduct.jsp").forward(request,response);
         for (int i = 0; i < list.size(); i++) {
             response.getWriter().println("<li\n" +
                     "            class=\"gategory-product-list col-lg-3 col-md-4 col-sm-6 col-xs-12\">\n" +
