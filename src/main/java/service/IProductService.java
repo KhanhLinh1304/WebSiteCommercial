@@ -13,5 +13,7 @@ public interface IProductService {
 	List<ProductModel> getAllProductByIdCategory(int idCategory);
 	ProductModel getProductById(int idProduct);
 	
+	void AddProduct(ProductModel product);
+	
 
 }

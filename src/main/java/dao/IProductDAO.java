@@ -13,5 +13,7 @@ public interface IProductDAO {
 
     List<ProductModel> getProductByIdCategory(int idCategory);
     List<ProductModel> getProductByIdBrand(int idBrand);
+    
+    void AddProduct(ProductModel product);
 
 }

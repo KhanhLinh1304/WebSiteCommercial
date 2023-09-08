@@ -191,6 +191,24 @@ public class ProductDAO implements IProductDAO {
 		}
 		return products;
 	}
+	@Override
+	public void AddProduct(ProductModel product) {
+		String query="insert into product(name, price, image, quantity, category_id, brand_id) values(?,?,?,?,?,?)";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+		    preparedStatement.setString(1, product.getName());
+		    preparedStatement.setInt(2, product.getPrice());
+		    preparedStatement.setString(3, product.getUrlImg());
+		    preparedStatement.setInt(4, product.getQuantity());
+		    preparedStatement.setInt(5, product.getIdCategory());
+		    preparedStatement.setInt(6, product.getIdBrand());
+		    preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	 public static void main(String[] args) {
 
          String a ="";
@@ -200,6 +218,8 @@ public class ProductDAO implements IProductDAO {
          }
          System.out.println(Long.parseLong(a));
     }
+
+	
 
 
 }

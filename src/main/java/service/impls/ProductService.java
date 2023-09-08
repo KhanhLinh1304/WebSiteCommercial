@@ -1,6 +1,6 @@
 package service.impls;
 
-import java.util.Arrays;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,6 +39,12 @@ public class ProductService implements IProductService {
 	public ProductModel getProductById(int idProduct) {
 		// TODO Auto-generated method stub
 		return product.getProductById(idProduct);
+	}
+
+	@Override
+	public void AddProduct(ProductModel productA) {
+		product.AddProduct(productA);
+		
 	}
 
 }
