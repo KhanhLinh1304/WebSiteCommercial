@@ -20,7 +20,7 @@
                                 <p>${error}</p>
                             </c:if>
 
-                            <form action="/send-mail-register" method="post">
+                            <form action="/form-send-mail-register" method="post">
                                 <div class="form-group first">
                                     <label for="">Nhập code ở đây</label>
                                     <input type="number" class="form-control" name="code">

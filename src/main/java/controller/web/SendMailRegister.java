@@ -11,7 +11,8 @@ import java.io.IOException;
 
 @WebServlet(name = "form-send-mail-register", value = "/form-send-mail-register")
 public class SendMailRegister extends HttpServlet {
-    @Inject
+    private static final long serialVersionUID = 1L;
+	@Inject
     IAccountService accountService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

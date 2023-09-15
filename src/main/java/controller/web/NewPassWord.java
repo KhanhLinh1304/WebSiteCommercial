@@ -46,9 +46,8 @@ public class NewPassWord extends HttpServlet {
 				 request.getRequestDispatcher("/views/web/newPass.jsp").forward(request, response);		 
 			 }else {
 				 accountSV.changePassword(account.getEmail(), xnPass);
-				 request.setAttribute("success", "Thay Đổi Mật Khẩu Thành Công! Vui Lòng Đăng Nhập Lại");
-			     session.invalidate();
-			     response.sendRedirect("web-home");
+				 request.setAttribute("success", "Thay Đổi Mật Khẩu Thành Công!");
+				 request.getRequestDispatcher("/views/web/newPass.jsp").forward(request, response);
 			 }
 		 }
 		 else {

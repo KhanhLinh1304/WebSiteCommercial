@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$(".current-lang").on( "click", function(){
 		$(".language-toogle").slideToggle(400);
 	});	
+	
 		
 /*---------------------------------------
 	price range ui slider js
@@ -67,7 +68,7 @@ $(document).ready(function(){
 	featured  product, bestseller, carousel
 ----------------------------------------- */	
 	$('.feartured-carousel, .bestseller-carousel').owlCarousel({
-		items : 5,
+		items : 4,
 		itemsDesktop : [1199,4],
 		itemsDesktopSmall : [991,3],
 		itemsTablet: [767,2],
@@ -115,7 +116,7 @@ $(document).ready(function(){
 	client carousel
 ----------------------------------------- */	
 	$('.client-carousel').owlCarousel({
-		items : 6,
+		items : 4,
 		itemsDesktop : [1199,4],
 		itemsDesktopSmall : [991,3],
 		itemsTablet: [767,2],
@@ -152,18 +153,7 @@ $(document).ready(function(){
 /*---------------------------------------
 	sidebar best seller carousel
 ----------------------------------------- */
-	$('.sidebar-best-seller-carousel').owlCarousel({
-		items : 1,
-		itemsDesktop : [1199,1],
-		itemsDesktopSmall : [991,1],
-		itemsTablet: [767,1],
-		itemsMobile : [480,1],
-		autoPlay :  false,
-		stopOnHover: false,		
-		navigation: true,
-		pagination: false,
-		navigationText:['<i class="fa fa-angle-left owl-prev-icon"></i>','<i class="fa fa-angle-right owl-next-icon"></i>']
-	});
+	
 		
 /*---------------------------------------
 	tab product carousel	
@@ -217,6 +207,7 @@ $(document).ready(function(){
 	  $(".qtybutton").on("click", function() {
 		var $button = $(this);
 		var oldValue = $button.parent().find("input").val();
+		var productId = $input.data("product-id");
 		if ($button.text() == "+") {
 		  var newVal = parseFloat(oldValue) + 1;
 		} else {
@@ -228,6 +219,21 @@ $(document).ready(function(){
 		  }
 		  }
 		$button.parent().find("input").val(newVal);
+		// Lấy giá sản phẩm từ trang web
+    var productPrice = parseFloat($("#product-price").text().replace("$", ""));
+		 $.ajax({
+        type: "POST",
+        url: "CartProcess",
+        data: { productId: productId, quantity: newVal },
+        success: function(response) {
+            // Xử lý kết quả từ Servlet nếu cần
+            console.log(response);
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            // Xử lý lỗi nếu có
+            console.log("Error: " + errorThrown);
+        }
+    });
 	  });
 		
 }); 
