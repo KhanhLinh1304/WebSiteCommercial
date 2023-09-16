@@ -28,7 +28,7 @@ public class SendMailRegister extends HttpServlet {
             request.setAttribute("error","<div class=\"alert alert-danger\" role=\"alert\">\n" +
                     "  Mật OTP không đúng!\n" +
                     "</div>");
-            request.getRequestDispatcher("/views/web/s").forward(request,response);
+            request.getRequestDispatcher("/views/web/sendCodeRegister.jsp").forward(request,response);
         } else {
             accountService.registerAccount(email,password);
             AccountModel account = accountService.loginAccount(email, password);

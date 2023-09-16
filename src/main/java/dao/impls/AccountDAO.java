@@ -174,5 +174,20 @@ public class AccountDAO implements IAccountDAO{
 		}
 	}
 
+	@Override
+	public void updateInformation(String email, int phone, String address) {
+		String query = "UPDATE `user` SET phone = ?, address = ? WHERE email = ?";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1, phone);
+			preparedStatement.setString(2, address);
+			preparedStatement.setString(3,email);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

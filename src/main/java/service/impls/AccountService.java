@@ -40,4 +40,9 @@ private IAccountDAO accountDAO;
 		accountDAO.changePassword(email,password);
 	}
 
+	@Override
+	public void updateInformation(String email, int phone, String address) {
+		accountDAO.updateInformation(email, phone, address);
+	}
+
 }

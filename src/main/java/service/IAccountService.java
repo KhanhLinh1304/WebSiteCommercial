@@ -9,4 +9,6 @@ public interface IAccountService {
 	void sendMailResgiter(String email, int code);
 	void forgotPassword(String email, int code);
 	void changePassword(String email, String password);
+	void updateInformation(String email, int phone, String address);
+
 }

@@ -191,15 +191,72 @@ public class ProductDAO implements IProductDAO {
 		}
 		return products;
 	}
-	 public static void main(String[] args) {
 
-         String a ="";
-         String clone = String.valueOf(123);
-         for (int i = clone.length() -1; i>= 0; i--) {
-             a += clone.charAt(i);
-         }
-         System.out.println(Long.parseLong(a));
+    @Override
+    public void addProduct(String name, int price, String urlImage, int quantity, int category, int brand) {
+        String query = "INSERT INTO product (name, price, image, quantity, category_id, brand_id) VALUES (?,?,?,?,?,?)";
+        try {
+            conn = DBConnect.getInstall().get().getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1,name);
+            preparedStatement.setInt(2, price);
+            preparedStatement.setString(3, urlImage);
+            preparedStatement.setInt(4,quantity);
+            preparedStatement.setInt(5,category);
+            preparedStatement.setInt(6,brand);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    @Override
+    public void deleteProduct(int idProduct) {
+        String disableForeign = "SET FOREIGN_KEY_CHECKS=0;";
+        String query = "DELETE product_color_size, product\n" +
+                "FROM product_color_size LEFT JOIN product ON product_color_size.product_id = product.product_id\n" +
+                "WHERE product.product_id = ?;";
+        String enableForeign =  "SET FOREIGN_KEY_CHECKS=1;";
+
+
+        try {
+            conn = DBConnect.getInstall().get().getConnection();
+            preparedStatement = conn.prepareStatement(disableForeign);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1, idProduct);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+            preparedStatement = conn.prepareStatement(enableForeign);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand) {
+        String query = "UPDATE product\n" +
+                "SET `name` = ?, price= ?, image =?, quantity =?,category_id =?, brand_id =?\n" +
+                "WHERE product_id = ?";
+        try {
+            conn = DBConnect.getInstall().get().getConnection();
+            preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, price);
+            preparedStatement.setString(3, urlImage);
+            preparedStatement.setInt(4, quantity);
+            preparedStatement.setInt(5,category);
+            preparedStatement.setInt(6,brand);
+            preparedStatement.setInt(7, idProduct);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
