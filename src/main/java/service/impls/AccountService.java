@@ -43,6 +43,9 @@ private IAccountDAO accountDAO;
 	}
 
 	@Override
+	public void updateInformation(String email, int phone, String address) {
+		accountDAO.updateInformation(email, phone, address);
+	}
 	public List<AccountModel> getAllAccount() {
 		// TODO Auto-generated method stub
 		return accountDAO.getAllAccount();
@@ -51,7 +54,7 @@ private IAccountDAO accountDAO;
 	@Override
 	public void ChangeStatusAccount(String email, String status) {
 		accountDAO.ChangeStatusAccount(email, status);
-		
+
 	}
 
 }

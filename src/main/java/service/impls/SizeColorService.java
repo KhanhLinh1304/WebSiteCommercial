@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import dao.ISizeColorDAO;
+import model.ColorModel;
 import model.SizeColorModel;
 import model.SizeModel;
 import service.ISizeColorService;
@@ -22,5 +23,27 @@ public class SizeColorService implements ISizeColorService {
 		// TODO Auto-generated method stub
 		return sizeColorDAO.getSizeByIdProduct(idProduct);
 	}
+
+	@Override
+	public List<ColorModel> getAllColor() {
+		return sizeColorDAO.getAllColor();
+	}
+
+	@Override
+	public void insertProductColorSize(int idColor, int idSize) {
+		sizeColorDAO.insertProductColorSize(idColor, idSize);
+	}
+
+	@Override
+	public void deleteProductColorSizeByIdProduct(int idProduct) {
+		sizeColorDAO.deleteProductColorSizeByIdProduct(idProduct);
+	}
+
+	@Override
+	public void insertProductColorSizeById(int idProduct, int idColor, int idSize) {
+		sizeColorDAO.insertProductColorSizeById(idProduct, idColor, idSize);
+
+	}
+
 
 }

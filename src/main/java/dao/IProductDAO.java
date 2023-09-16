@@ -2,6 +2,7 @@ package dao;
 
 import model.ProductModel;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IProductDAO {
@@ -13,7 +14,9 @@ public interface IProductDAO {
 
     List<ProductModel> getProductByIdCategory(int idCategory);
     List<ProductModel> getProductByIdBrand(int idBrand);
-    
-    void AddProduct(ProductModel product);
+    void addProduct(String name, int price, String urlImage, int quantity, int category, int brand);
+    void deleteProduct(int idProduct);
+    void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand);
 
 }
+

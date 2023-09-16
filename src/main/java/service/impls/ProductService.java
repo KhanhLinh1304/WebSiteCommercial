@@ -42,9 +42,22 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public void AddProduct(ProductModel productA) {
-		product.AddProduct(productA);
-		
+	public void addProduct(String name, int price, String urlImage, int quantity, int category, int brand) {
+		product.addProduct(name, price, urlImage, quantity, category, brand);
 	}
+
+	@Override
+	public void deleteProduct(int idProduct) {
+		product.deleteProduct(idProduct);
+	}
+
+	@Override
+	public void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand) {
+		product.editProduct(idProduct, name, price, urlImage, quantity, category, brand);
+	}
+//	public void AddProduct(ProductModel productA) {
+//		product.AddProduct(productA);
+//
+//	}
 
 }

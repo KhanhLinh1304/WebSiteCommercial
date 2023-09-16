@@ -18,4 +18,7 @@
 	<decorator name="form" page="form.jsp">
 		<pattern>/form-*</pattern>
 	</decorator>
+	<decorator name="ajax" page="ajax.jsp">
+		<pattern>/ajax-*</pattern>
+	</decorator>
 </decorators>

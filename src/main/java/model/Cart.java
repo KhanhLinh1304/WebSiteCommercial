@@ -50,11 +50,22 @@ public class Cart {
 		}
 		return total;
 	}
+
 	public int getTotalQuantity() {
 		int totalQ = 0;
-		for(Item it: items) {
+		for (Item it : items) {
 			totalQ += it.getQuantity();
 		}
 		return totalQ;
 	}
-}
+
+
+		@Override
+		public String toString () {
+			return "Cart{" +
+					"items=" + items +
+					'}';
+
+		}
+	}
+

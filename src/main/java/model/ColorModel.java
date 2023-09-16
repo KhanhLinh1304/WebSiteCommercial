@@ -24,6 +24,12 @@ public class ColorModel {
 	public void setNameColor(String nameColor) {
 		this.nameColor = nameColor;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "ColorModel{" +
+				"idColor=" + idColor +
+				", nameColor='" + nameColor + '\'' +
+				'}';
+	}
 }

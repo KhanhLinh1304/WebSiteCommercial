@@ -9,6 +9,7 @@ import java.util.List;
 
 import dao.ISizeColorDAO;
 import database.DBConnect;
+import model.ColorModel;
 import model.SizeColorModel;
 import model.SizeModel;
 
@@ -62,5 +63,80 @@ public class SizeColorDAO implements ISizeColorDAO {
 		}
 		return models;
 	}
-	
+
+	@Override
+	public List<ColorModel> getAllColor() {
+		ArrayList<ColorModel> list = new ArrayList<>();
+		String query = "select * from color";
+		try  {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			results = preparedStatement.executeQuery();
+			while (results.next()) {
+				list.add(new ColorModel(results.getInt(1),
+						results.getString(2)));
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+	}
+
+	@Override
+	public void insertProductColorSize(int idColor, int idSize) {
+		int lastProductId = 0;
+		String getLastProductId = "SELECT *\n" +
+				"FROM product\n" +
+				"ORDER BY product_id DESC\n" +
+				"LIMIT 1";
+		String insertProductColorSize = "INSERT INTO product_color_size(product_id, color_id, size_id) VALUES \n" +
+				"(?, ?, ?)";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement= conn.prepareStatement(getLastProductId);
+			results = preparedStatement.executeQuery();
+			while (results.next()) {
+				lastProductId = results.getInt(1);
+			}
+			preparedStatement = conn.prepareStatement(insertProductColorSize);
+			preparedStatement.setInt(1,lastProductId);
+			preparedStatement.setInt(2,idColor);
+			preparedStatement.setInt(3,idSize);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	@Override
+	public void deleteProductColorSizeByIdProduct(int idProduct) {
+		String query = "DELETE FROM product_color_size WHERE product_id = ?";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1, idProduct);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	@Override
+	public void insertProductColorSizeById(int idProduct, int idColor, int idSize) {
+		String query = "INSERT INTO product_color_size(product_id, color_id, size_id) VALUES \n" +
+				"(?, ?, ?)";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1,idProduct);
+			preparedStatement.setInt(2,idColor);
+			preparedStatement.setInt(3,idSize);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+
 }
