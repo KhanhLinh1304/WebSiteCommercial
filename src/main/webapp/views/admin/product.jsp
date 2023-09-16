@@ -44,6 +44,7 @@
 						<div class="add-product">
 							<a href="admin-add-product">Add Product</a>
 						</div>
+						${notify}
 						<table>
 							<tr>
 								<th>Image</th>
@@ -55,20 +56,20 @@
 							</tr>
 							<c:forEach items="${products}" var="product">
 							<tr>
-								<td><img src="${product.image}" alt="" /></td>
+								<td><img src="${product.urlImg}" alt="" /></td>
 								<td>${product.name}</td>
 								<td>${product.price}</td>
 								 <td>${product.idCategory}</td>
 								<td>${product.quantity}</td>
 							   
 								<td>
-								<a href="admin-edit-product?idProduct=${product.idProduct}" class="button-link">
+								<a href="admin-edit-product?idProduct=${product.idP}" class="button-link">
 									<button data-toggle="tooltip" title="Edit"
 										class="pd-setting-ed">
 									<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 									</button>
 									</a>
-									<a href="admin-delete-product?idProduct=${product.idProduct}" class="button-link">
+									<a href="admin-delete-product?idProduct=${product.idP}" class="button-link">
 									<button data-toggle="tooltip" title="Trash"
 										class="pd-setting-ed">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>

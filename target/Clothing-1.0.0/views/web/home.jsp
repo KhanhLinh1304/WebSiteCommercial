@@ -31,7 +31,7 @@
 											<ul>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-search"></i></a></li>
-												<li><a href="#" title="Quick view"><i
+												<li><a href="addToCart?idProduct=${product.idP}&quantity=1" title="Quick view"><i
 														class="fa fa-shopping-cart"></i></a></li>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-retweet"></i></a></li>
@@ -55,6 +55,7 @@
 										<div class="price-box">
 											<span class="price">${product.price}</span>
 										</div>
+										
 									</div>
 								</div>
 							</li>

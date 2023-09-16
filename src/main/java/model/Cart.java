@@ -50,4 +50,11 @@ public class Cart {
 		}
 		return total;
 	}
+
+	@Override
+	public String toString() {
+		return "Cart{" +
+				"items=" + items +
+				'}';
+	}
 }

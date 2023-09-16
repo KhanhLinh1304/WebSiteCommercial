@@ -76,12 +76,13 @@ public class ProductModel {
     @Override
     public String toString() {
         return "ProductModel{" +
-                "name='" + name + '\'' +
+                "idP=" + idP +
+                ", name='" + name + '\'' +
                 ", price=" + price +
                 ", urlImg='" + urlImg + '\'' +
                 ", quantity=" + quantity +
                 ", idCategory=" + idCategory +
                 ", idBrand=" + idBrand +
-                "}\n";
+                '}';
     }
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -27,31 +28,36 @@
 			</div>
 			<div class="profile-info col-md-9">
 				<div class="panel">
-					
+
 					<div class="panel-body bio-graph-info">
 						<h1></h1>
 						<div class="row">
-							<form>
+							${notify}
+							<c:set var="information" value="${information}"/>
+							<form action="/user" method="post">
 								<div class="form-group">
 									<label for="exampleFormControlInput1">Email address</label> <input
 										type="email" class="form-control"
-										id="exampleFormControlInput1" placeholder="name@example.com">
+										id="exampleFormControlInput1" value="${information.email}" disabled>
+									<input type="hidden" class="form-control"
+											id="" value="${information.email}"  name="email">
+									<input type="hidden" class="form-control"
+										   id="" value="${information.pass}"  name="password">
 								</div>
-								<div class="form-group">
-									<label for="exampleFormControlInput2">Password</label> <input
-										type="password" class="form-control"
-										id="exampleFormControlInput2" >
-										</div>
-								
+<%--								<div class="form-group">--%>
+<%--									<label for="exampleFormControlInput2">Password</label>--%>
+<%--									<input type="password" class="form-control"--%>
+<%--										id="exampleFormControlInput2">--%>
+<%--								</div>--%>
 								<div class="form-group">
 									<label for="exampleFormControlInput3">Phone</label> <input
-										type="text" class="form-control"
-										id="exampleFormControlInput3">
+										type="number" class="form-control"
+										id="exampleFormControlInput3" value="${information.phone}" name="phone">
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlInput">Địa Chỉ</label> <input
 										type="text" class="form-control"
-										id="exampleFormControlInput" >
+										id="exampleFormControlInput" value="${information.address}" name="address">
 								</div>
 
 								<button style="width: 200px;"type="submit" class="btn btn-dark">Sửa</button>
