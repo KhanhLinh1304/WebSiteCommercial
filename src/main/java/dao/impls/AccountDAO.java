@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import dao.IAccountDAO;
@@ -36,7 +38,8 @@ public class AccountDAO implements IAccountDAO{
 				String phone = results.getString(4);
 				String address = results.getString(5);
 				int roleId = results.getInt(6);
-				account = new AccountModel(userId, emailUser, password, phone, address, roleId);
+				String status = results.getString(7);
+				account = new AccountModel(userId, emailUser, password, phone, address, roleId,status);
 				
 			}
 		} catch (SQLException e) {
@@ -61,7 +64,8 @@ public class AccountDAO implements IAccountDAO{
 						results.getString(3),
 						results.getString(4),
 						results.getString(5),
-						results.getInt(6));
+						results.getInt(6), 
+						results.getString(7));
 
 			}
 		} catch (SQLException e) {
@@ -182,12 +186,56 @@ public class AccountDAO implements IAccountDAO{
 			preparedStatement = conn.prepareStatement(query);
 			preparedStatement.setInt(1, phone);
 			preparedStatement.setString(2, address);
-			preparedStatement.setString(3,email);
+			preparedStatement.setString(3, email);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	public List<AccountModel> getAllAccount() {
+		List<AccountModel> accounts = new ArrayList<>();
+		String query = "select * from user";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			results = preparedStatement.executeQuery();
+			while(results.next()) {
+				int userId = results.getInt(1);
+				String emailUser = results.getString(2);
+				String password = results.getString(3);
+				String phone = results.getString(4);
+				String address = results.getString(5);
+				int roleId = results.getInt(6);
+				String status = results.getString(7);
+				AccountModel account = new AccountModel(userId, emailUser, password, phone, address, roleId, status);
+				accounts.add(account);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return accounts;
+	}
+
+	@Override
+	public void ChangeStatusAccount(String email, String status) {
+		String query = "update user set status = ? where email = ? ";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setString(1, status);
+			preparedStatement.setString(2, email);
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 
 }

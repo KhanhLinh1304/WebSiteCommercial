@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import model.AccountModel;
 
 public interface IAccountDAO {
@@ -10,5 +12,8 @@ public interface IAccountDAO {
 	void forgotPassword(String email, int code);
 	void changePassword(String email, String password);
 	void updateInformation(String email, int phone, String address);
+
+	List<AccountModel> getAllAccount();
+	void ChangeStatusAccount(String email, String status);
 
 }

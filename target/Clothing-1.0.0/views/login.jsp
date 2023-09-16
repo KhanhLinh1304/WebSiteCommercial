@@ -21,6 +21,9 @@
 										<strong>LOGIN TO SHOP</strong>
 									</h3>
 								</div>
+								<c:if test="${lock != null }">
+									<p>${lock}</p>
+								</c:if>
 								<c:if test="${notify != null }">
 									<p>${notify}</p>
 								</c:if>

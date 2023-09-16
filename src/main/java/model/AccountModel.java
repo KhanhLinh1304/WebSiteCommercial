@@ -7,8 +7,9 @@ public class AccountModel {
 	private String phone;
 	private String address;
 	private int roleId;
+	private String status;
 	public AccountModel() {}
-	public AccountModel(int userId, String email, String pass, String phone, String address, int roleId) {
+	public AccountModel(int userId, String email, String pass, String phone, String address, int roleId, String status) {
 		super();
 		this.userId = userId;
 		this.email = email;
@@ -16,6 +17,7 @@ public class AccountModel {
 		this.phone = phone;
 		this.address = address;
 		this.roleId = roleId;
+		this.status = status;
 	}
 	public int getUserId() {
 		return userId;
@@ -53,7 +55,14 @@ public class AccountModel {
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
+	
 
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	@Override
 	public String toString() {
 		return "AccountModel{" +
@@ -62,7 +71,8 @@ public class AccountModel {
 				", pass='" + pass + '\'' +
 				", phone='" + phone + '\'' +
 				", address='" + address + '\'' +
-				", roleId=" + roleId +
+				", status ='" + status + '\'' +
+				", roleId=" + roleId + 
 				'}';
 	}
 }

@@ -17,11 +17,11 @@
 				<div class="panel">
 					<h1 style="text-align: center">Quản Lí Hồ Sơ Của Bạn</h1>
 					<ul class="nav nav-pills nav-stacked">
-						<li class="active"><a href="#"> <i class="fa fa-user"></i>
+						<li class="active"><a href="user"> <i class="fa fa-user"></i>
 								Hồ Sơ Cá Nhân
 						</a></li>
 						<li><a href="#"> <i class="fa fa-list-alt"></i> Đơn Hàng</a></li>
-						<li><a href="#"> <i class="fa fa-edit"></i> Thay Đổi Mật Khẩu
+						<li><a href="ChangePassword"> <i class="fa fa-edit"></i> Thay Đổi Mật Khẩu
 						</a></li>
 					</ul>
 				</div>

@@ -1,6 +1,6 @@
 package service.impls;
 
-import java.util.Arrays;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -55,5 +55,9 @@ public class ProductService implements IProductService {
 	public void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand) {
 		product.editProduct(idProduct, name, price, urlImage, quantity, category, brand);
 	}
+//	public void AddProduct(ProductModel productA) {
+//		product.AddProduct(productA);
+//
+//	}
 
 }

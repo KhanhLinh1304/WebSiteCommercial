@@ -1,5 +1,7 @@
 package service.impls;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import dao.IAccountDAO;
@@ -43,6 +45,16 @@ private IAccountDAO accountDAO;
 	@Override
 	public void updateInformation(String email, int phone, String address) {
 		accountDAO.updateInformation(email, phone, address);
+	}
+	public List<AccountModel> getAllAccount() {
+		// TODO Auto-generated method stub
+		return accountDAO.getAllAccount();
+	}
+
+	@Override
+	public void ChangeStatusAccount(String email, String status) {
+		accountDAO.ChangeStatusAccount(email, status);
+
 	}
 
 }

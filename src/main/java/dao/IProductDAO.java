@@ -19,3 +19,4 @@ public interface IProductDAO {
     void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand);
 
 }
+

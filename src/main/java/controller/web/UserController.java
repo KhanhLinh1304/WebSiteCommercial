@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.AccountModel;
+
+
 /**
  * Servlet implementation class UserController
  */
@@ -25,7 +28,6 @@ public class UserController extends HttpServlet {
 	IAccountService accountService;
     public UserController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
