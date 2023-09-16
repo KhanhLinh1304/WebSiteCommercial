@@ -2,7 +2,7 @@ package model;
 
 public class Item {
 	private ProductModel product;
-	private int quantity;;
+	private int quantity;
 	private int price;
 
 	public Item(ProductModel product, int quantity, int price) {
@@ -23,7 +23,7 @@ public class Item {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {

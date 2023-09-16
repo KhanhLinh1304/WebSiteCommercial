@@ -70,7 +70,7 @@
 									</a>
 									</c:when>
 									<c:otherwise>
-									<a href="admin-lockUser?email=${account.email}&status=${account.status}" style="color: white" data-toggle="tooltip" title="lock-user"
+									<a href="admin-lockUser?email=${account.email}&status=${account.status}&roleId=${account.roleId}" style="color: white" data-toggle="tooltip" title="lock-user"
 										class="pd-setting-ed">
 										<i class="fa fa-lock" aria-hidden="true"></i>
 									</a>

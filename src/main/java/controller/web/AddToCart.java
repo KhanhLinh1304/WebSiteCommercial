@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.AccountModel;
 import model.Cart;
 import model.Item;
 import model.ProductModel;
@@ -35,6 +36,8 @@ public class AddToCart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  HttpSession session = request.getSession();
+		  AccountModel account = (AccountModel)session.getAttribute("account");
+		  if(account != null) {
 		  Cart cart = new Cart();
 		  Object o = session.getAttribute("cart");
 		  if(o != null) {
@@ -55,6 +58,9 @@ public class AddToCart extends HttpServlet {
 		  RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 			rd.forward(request, response);
 			response.sendRedirect("web-home");
+		  }else {
+			  response.sendRedirect("login");
+		  }
   	
  
 		  

@@ -44,10 +44,17 @@ public class Cart {
 	}
 	//duyệt qua item để lấy giá
 	public float getPriceItem() {
-		float total = 0;
+		int total = 0;
 		for(Item i : items) {
 			total+=i.getQuantity()* i.getPrice();
 		}
 		return total;
+	}
+	public int getTotalQuantity() {
+		int totalQ = 0;
+		for(Item it: items) {
+			totalQ += it.getQuantity();
+		}
+		return totalQ;
 	}
 }

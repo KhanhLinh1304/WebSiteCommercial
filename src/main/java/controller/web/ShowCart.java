@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import model.AccountModel;
 import model.Cart;
 import model.Item;
 
@@ -31,6 +33,8 @@ public class ShowCart extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+	    AccountModel account = (AccountModel)session.getAttribute("account");
+	    if(account != null) {
 		Cart cart = (Cart)session.getAttribute("cart");
 		List<Item> items = (List<Item>)session.getAttribute("listItem");
 		if(cart == null) {
@@ -40,10 +44,15 @@ public class ShowCart extends HttpServlet {
 		}else {
 			request.setAttribute("listItem", items);
 			request.setAttribute("totalPrice",  cart.getPriceItem());
+			request.setAttribute("totalQuantity", cart.getTotalQuantity());
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/cart.jsp");
 		rd.forward(request, response);
+	    }else {
+	    	  response.sendRedirect("login");
+	    }
+	  
 	}
 
 	/**

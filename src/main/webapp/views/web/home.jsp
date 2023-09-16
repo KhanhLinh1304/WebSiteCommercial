@@ -10,7 +10,7 @@
 <body>
 	<!-- -------------------------- Bắt Đầu Sản Phẩm Bán Chạy--------------------------- -->
 
-	<%@include file="/common/web/slides.jsp"%>
+
 
 	<section class="main-content-section">
 		<div class="container">
@@ -69,40 +69,5 @@
 		</div>
 		</div>
 	</section>
-	<!-- ---------------------Kết thúc tất cả sản phẩm------------------------ -->
-	<!-- ---------------------------- bắt đầu brand------------------------------ -->
-	<section class="brand-client-area">
-		<div class="container">
-			<div class="row">
-				<!-- BRAND-CLIENT-ROW START -->
-				<div class="brand-client-row">
-					<div class="center-title-area">
-						<h2 class="center-title">BRAND & CLIENTS</h2>
-					</div>
-					<div class="col-xs-12">
-						<div class="row">
-							<!-- CLIENT-CAROUSEL START -->
-							<div class="client-carousel">
-								<!-- CLIENT-SINGLE START -->
-								<div class="item">
-									<div class="single-client">
-										<a href="#"> <img
-											src="<c:url value='/template/web/img/brand/1.png'/>"
-											alt="brand-client" />
-										</a>
-									</div>
-								</div>
-
-								<!-- CLIENT-SINGLE END -->
-							</div>
-							<!-- CLIENT-CAROUSEL END -->
-						</div>
-					</div>
-				</div>
-				<!-- BRAND-CLIENT-ROW END -->
-			</div>
-		</div>
-	</section>
-	<!-- --------------------------------kết thúc brand---------------------------- -->
 </body>
 </html>

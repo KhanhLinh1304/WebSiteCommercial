@@ -35,12 +35,20 @@ public class LockUser extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String status = request.getParameter("status");
-		if(status.equals("enable")) {
-			accountDAO.ChangeStatusAccount(email, "disable");
-			response.sendRedirect("admin-account");
+		int role = Integer.parseInt(request.getParameter("roleId"));
+		if(role == 1) {
+			if(status.equals("enable")) {
+				accountDAO.ChangeStatusAccount(email, "disable");
+				response.sendRedirect("admin-account");
+			}else {
+				accountDAO.ChangeStatusAccount(email, "enable");
+				response.sendRedirect("admin-account");
+			}
+			
 		}else {
-			accountDAO.ChangeStatusAccount(email, "enable");
-			response.sendRedirect("admin-account");
+			request.setAttribute("notify", "<div class=\"alert alert-danger\"> \n Bạn Không Thể Khóa User thuộc admin! </div>");
+			RequestDispatcher rd = request.getRequestDispatcher("views/admin/user.jsp");
+			rd.forward(request, response);
 		}
 		
 	}
