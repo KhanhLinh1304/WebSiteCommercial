@@ -1,5 +1,7 @@
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.HashSet" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -54,36 +56,39 @@
 									<div class="single-product-price">
 										<h2><p>${product.price}đ</p></h2>
 									</div>
-									
-									<div class="single-product-quantity">
-										<p class="small-title">Quantity</p> 
-										<div class="cart-quantity">
-											<div class="cart-plus-minus-button single-qty-btn">
-												<input class="cart-plus-minus sing-pro-qty" type="text" name="qtybutton" value="0">
+
+									<form action="addToCart?idProduct=${product.idP}" method="post">
+										<div class="single-product-quantity">
+											<p class="small-title">Quantity</p>
+											<div class="cart-quantity">
+												<div class="cart-plus-minus-button single-qty-btn">
+													<input class="cart-plus-minus sing-pro-qty" type="number" name="quantity" value="1">
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="single-product-size">
-										<p class="small-title">Size </p> 
-										<c:forEach items = "${lists}" var="size">
-											<input type="radio" id="html" name="size" value="${size.nameSize}">
-                                          <label for="html">${size.nameSize}</label>
-												</c:forEach>
-										</select>
-									
-									</div>
-									<div class="single-product-color">
-										<p class="small-title">Color </p> 
-										<c:forEach items="${lists}" var="color">
-										
-										<input type="radio" id="html" name="color" value="${color.nameColor}">
-                                          <label for="html">${color.nameColor}</label>
-                                          </c:forEach>
-                                       
-									</div>
-									<div class="single-product-add-cart">
-										<a class="add-cart-text" title="Add to cart" href="#">Add to cart</a>
-									</div>
+										<div class="single-product-size">
+											<p class="small-title">Size </p>
+											<c:forEach items="${sizes}" var="sizes">
+												<input type="radio" id="html" name="size" value="${sizes.idSize}">
+												<label for="html">${sizes.nameSize}</label>
+											</c:forEach>
+											</select>
+
+										</div>
+										<div class="single-product-color">
+											<p class="small-title">Color </p>
+											<c:forEach items="${colors}" var="colors">
+
+												<input type="radio" id="html" name="color" value="${colors.idColor}">
+												<label for="html">${colors.nameColor}</label>
+											</c:forEach>
+
+										</div>
+										<div class="single-product-add-cart">
+<%--											<a class="add-cart-text" title="Add to cart" href="addToCart?idProduct=${product.idP}">Add to cart</a>--%>
+											<button class="add-cart-text" title="Add to cart">Add to cart</button>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>

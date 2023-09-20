@@ -48,6 +48,15 @@ public class SizeColorModel {
 	public void setIdProduct(int idProduct) {
 		this.idProduct = idProduct;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "SizeColorModel{" +
+				"idSize=" + idSize +
+				", nameSize='" + nameSize + '\'' +
+				", idColor=" + idColor +
+				", nameColor='" + nameColor + '\'' +
+				", idProduct=" + idProduct +
+				"}\n";
+	}
 }

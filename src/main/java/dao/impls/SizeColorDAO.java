@@ -138,5 +138,57 @@ public class SizeColorDAO implements ISizeColorDAO {
 
 	}
 
+	@Override
+	public List<SizeModel> getSizeById(int idP) {
+		List<SizeModel> list = new ArrayList<>();
+		String query = "select size.* \n" +
+				"from product_color_size inner join size on product_color_size.size_id = size.size_id\n" +
+				"where product_id = ?\n" +
+				"GROUP BY size.size_name";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1, idP);
+			results = preparedStatement.executeQuery();
+			while(results.next()) {
+				list.add(new SizeModel(results.getInt(1),
+						results.getString(2)));
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<ColorModel> getColorById(int idP) {
+		List<ColorModel> list = new ArrayList<>();
+		String query = "select color.* \n" +
+				"from product_color_size inner join color on product_color_size.size_id = color.color_id\n" +
+				"where product_id = ?\n" +
+				"GROUP BY color.color_name";
+		try {
+			conn = DBConnect.getInstall().get().getConnection();
+			preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setInt(1, idP);
+			results = preparedStatement.executeQuery();
+			while(results.next()) {
+				list.add(new ColorModel(results.getInt(1),
+						results.getString(2)));
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(new SizeColorDAO().getColorById(1));
+	}
+
 
 }

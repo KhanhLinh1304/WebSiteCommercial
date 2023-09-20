@@ -31,8 +31,14 @@
 											<ul>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-search"></i></a></li>
-												<li><a href="addToCart?idProduct=${product.idP}&quantity=1" title="Quick view"><i
-														class="fa fa-shopping-cart"></i></a></li>
+												<li>
+<%--													<a href="addToCart?idProduct=${product.idP}&quantity=1" title="Quick view">--%>
+<%--														<i class="fa fa-shopping-cart"></i>--%>
+<%--													</a>--%>
+													<a href="/detailProduct?idProduct=${product.idP}" title="Quick view">
+														<i class="fa fa-shopping-cart"></i>
+													</a>
+												</li>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-retweet"></i></a></li>
 												<li><a href="#" title="Quick view"><i

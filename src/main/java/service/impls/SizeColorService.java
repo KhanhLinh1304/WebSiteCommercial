@@ -45,5 +45,15 @@ public class SizeColorService implements ISizeColorService {
 
 	}
 
+	@Override
+	public List<SizeModel> getSizeById(int idP) {
+		return sizeColorDAO.getSizeById(idP);
+	}
+
+	@Override
+	public List<ColorModel> getColorById(int idP) {
+		return sizeColorDAO.getColorById(idP);
+	}
+
 
 }

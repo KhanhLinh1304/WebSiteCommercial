@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8"?>
-<decorators defaultdir="/decorators">
-	<excludes>
-		<pattern>/api*</pattern>
-	</excludes>
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin*</pattern>
-	</decorator>
-	<decorator name="web" page="web.jsp">
-		<pattern>/*</pattern>
-	</decorator>
-	<decorator name="login" page="login.jsp">
-		<pattern>/login</pattern>
-	</decorator>
-	<decorator name="register" page="signup.jsp">
-		<pattern>/register</pattern>
-	</decorator>
-	<decorator name="form" page="form.jsp">
-		<pattern>/form-*</pattern>
-	</decorator>
-</decorators>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorators">
 	<excludes>
@@ -45,4 +22,3 @@
 		<pattern>/ajax-*</pattern>
 	</decorator>
 </decorators>
->>>>>>> a3af44eddd1295c4c8641cb4da7745e7aca55004

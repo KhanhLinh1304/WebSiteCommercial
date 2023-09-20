@@ -17,62 +17,62 @@ import model.Cart;
 import model.Item;
 import model.ProductModel;
 import service.IProductService;
+import service.ISizeColorService;
 
 /**
  * Servlet implementation class AddToCart
  */
 @WebServlet("/addToCart")
 public class AddToCart extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     @Inject
     private IProductService productSV;
+
     public AddToCart() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		HttpSession session = request.getSession();
-		  AccountModel account = (AccountModel)session.getAttribute("account");
-		  if(account != null) {
-		  Cart cart = new Cart();
-		  Object o = session.getAttribute("cart");
-		  if(o != null) {
-			  cart = (Cart) o;
-		  }else {
-			   cart = new Cart();
-		  }
-		  int id = Integer.parseInt(request.getParameter("idProduct"));
-		  int quantity = Integer.parseInt(request.getParameter("quantity"));
-		  ProductModel product = productSV.getProductById(id);
-		  int price = product.getPrice(); 
-		  Item item = new Item(product, quantity,price);
-		  cart.AddItem(item);
-		  List<Item> list = cart.getItems();
-		  session.setAttribute("listItem", list);
-	      session.setAttribute("size", list.size());
-		  session.setAttribute("cart", cart);
-		  RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
-		  rd.forward(request, response);
-			response.sendRedirect("web-home");
-		  }else {
-			  response.sendRedirect("login");
-		  }
-  	
- 
-		  
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        HttpSession session = request.getSession();
+        AccountModel account = (AccountModel) session.getAttribute("account");
+        if (account != null) {
+            Cart cart = new Cart();
+            Object o = session.getAttribute("cart");
+            if (o != null) {
+                cart = (Cart) o;
+            } else {
+                cart = new Cart();
+            }
+            int id = Integer.parseInt(request.getParameter("idProduct"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            int size = Integer.parseInt(request.getParameter("size"));
+            int color = Integer.parseInt(request.getParameter("color"));
+            ProductModel product = productSV.getProductById(id);
+            int price = product.getPrice();
+            Item item = new Item(product, quantity, size, color, price);
+            cart.AddItem(item);
+            List<Item> list = cart.getItems();
+            session.setAttribute("listItem", list);
+            session.setAttribute("size", list.size());
+            session.setAttribute("cart", cart);
+            RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("web-home");
+        } else {
+            response.sendRedirect("login");
+        }
+    }
 
 }
