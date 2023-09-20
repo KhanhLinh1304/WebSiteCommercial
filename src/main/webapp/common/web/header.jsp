@@ -16,7 +16,12 @@
 			<!-- HEADER-LEFT-MENU START -->
 			<div class="col-lg-2 col-md-2 col-sm-2 ">
 				<div style="margin-top: 25px;">
+<<<<<<< HEAD
+					<a href="index.html"><h1 style="font-family: Impact;">Fashion
+							</h1> </a>
+=======
 					<a href="index.html"><h1 style="font-family: Impact;">Fashion</h1> </a>
+>>>>>>> a3af44eddd1295c4c8641cb4da7745e7aca55004
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
