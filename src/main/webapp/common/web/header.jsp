@@ -108,7 +108,7 @@
 
 											<ul>
 												<li><a
-													href="CategoryController?categoryId=<%=category.getIdCategory()%>"><%=category.getNameCategory()%></a></li>
+													href="CategoryController?categoryId=<%=category.getIdCategory()%>&ad=category"><%=category.getNameCategory()%></a></li>
 											</ul>
 										</div>
 									</div>

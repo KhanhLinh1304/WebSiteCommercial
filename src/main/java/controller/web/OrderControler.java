@@ -58,7 +58,7 @@ public class OrderControler extends HttpServlet {
 			int totalP = Integer.parseInt(cleantTotalPrice);
 			int id = account.getUserId();
 			int totalQuantity = Integer.parseInt(request.getParameter("totalQuantity"));	
-			OrderModel order = new OrderModel(id, totalP, totalQuantity, null);
+			OrderModel order = new OrderModel(1,id, totalP, totalQuantity, null,null);
 			orderSV.AddOrder(cart, order);
 			session.removeAttribute("cart");
 			session.setAttribute("size", 0);

@@ -41,35 +41,20 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="product-status-wrap">
 						<h4>Danh Sách Đơn Hàng</h4>
-						<c:if test="${notify != null}">
-						<div>${notify}</div>
-						</c:if>
+						
 						<table>
 							<tr>
 							    <th>Id Đơn Hàng</th>
-								<th>Id Người Dùng</th>
+								<th>Id Product</th>
 								<th>Số Lượng SP</th>
-								<th>Trạng Thái</th>
 								<th>Tổng Giá Tiền</th>
-								<th>Ngày Đặt Hàng</th>
-								<th>Setting</th>
 							</tr>
 							<c:forEach var="order" items="${order}">
 							<tr>
-								<td><a style="color:white" href="admin-detail-order?idOrder=${order.idOrder}">${order.idOrder}</a></td>
-								<td>${order.idUser }</td>
-								<td>${order.totalQuantity}</td>
-								<td>${order.status}</td>
-								<td>${order.totalPrice}</td>
-								<td>${order.date_order}</td>
-								<td>
-								<a href="admin-delete-order?idOrder=${order.idOrder}" class="button-link">
-									<button data-toggle="tooltip" title="Trash"
-										class="pd-setting-ed">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-									</button>
-									</a>
-								</td>
+								<td>${order.orderId}</td>
+								<td>${order.productId}</td>
+								<td>${order.quantity}</td>
+								<td>${order.price}</td>
 							</tr>
 							</c:forEach>
 						</table>

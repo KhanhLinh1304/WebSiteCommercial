@@ -31,9 +31,7 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="admin"><span class="mini-sub-pro">Dashboard </span></a></li>
                                 <li><a title="Product List" href="admin-product"><span class="mini-sub-pro">Product List</span></a></li>
-                                <li><a title="Product Edit" href="admin-add-product"><span class="mini-sub-pro">Product Edit</span></a></li>
-                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
-                                <li><a title="Product Cart" href="admin-cart-product"><span class="mini-sub-pro">Product Cart</span></a></li>
+                                <li><a title="Product Cart" href="admin-order-product"><span class="mini-sub-pro">Product Order</span></a></li>
                                 <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
                                
                             </ul>

@@ -35,7 +35,8 @@ public class AddToCart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  HttpSession session = request.getSession();
+	
+		HttpSession session = request.getSession();
 		  AccountModel account = (AccountModel)session.getAttribute("account");
 		  if(account != null) {
 		  Cart cart = new Cart();
@@ -56,7 +57,7 @@ public class AddToCart extends HttpServlet {
 	      session.setAttribute("size", list.size());
 		  session.setAttribute("cart", cart);
 		  RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
-			rd.forward(request, response);
+		  rd.forward(request, response);
 			response.sendRedirect("web-home");
 		  }else {
 			  response.sendRedirect("login");
