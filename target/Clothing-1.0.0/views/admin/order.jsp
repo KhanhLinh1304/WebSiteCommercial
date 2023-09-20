@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Order List</title>
 </head>
 <body>
@@ -39,63 +40,38 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="product-status-wrap">
-						<h4>Products List</h4>
-						<div class="add-product">
-							<a href="product-edit.html">Add Product</a>
-						</div>
+						<h4>Danh Sách Đơn Hàng</h4>
+						<c:if test="${notify != null}">
+						<div>${notify}</div>
+						</c:if>
 						<table>
 							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th>Status</th>
-								<th>Purchases</th>
-								<th>Product sales</th>
-								<th>Stock</th>
-								<th>Price</th>
+							    <th>Id Đơn Hàng</th>
+								<th>Id Người Dùng</th>
+								<th>Số Lượng SP</th>
+								<th>Trạng Thái</th>
+								<th>Tổng Giá Tiền</th>
+								<th>Ngày Đặt Hàng</th>
 								<th>Setting</th>
 							</tr>
+							<c:forEach var="order" items="${order}">
 							<tr>
-								<td><img src="img/new-product/5-small.jpg" alt="" /></td>
-								<td>Product Title 1</td>
+								<td><a style="color:white" href="admin-detail-order?idOrder=${order.idOrder}">${order.idOrder}</a></td>
+								<td>${order.idUser }</td>
+								<td>${order.totalQuantity}</td>
+								<td>${order.status}</td>
+								<td>${order.totalPrice}</td>
+								<td>${order.date_order}</td>
 								<td>
-									<button class="pd-setting">Active</button>
-								</td>
-								<td>50</td>
-								<td>$750</td>
-								<td>Out Of Stock</td>
-								<td>$15</td>
-								<td>
-									<button data-toggle="tooltip" title="Edit"
-										class="pd-setting-ed">
-										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-									</button>
+								<a href="admin-delete-order?idOrder=${order.idOrder}" class="button-link">
 									<button data-toggle="tooltip" title="Trash"
 										class="pd-setting-ed">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
 									</button>
+									</a>
 								</td>
 							</tr>
-							<tr>
-								<td><img src="img/new-product/7-small.jpg" alt="" /></td>
-								<td>Product Title 6</td>
-								<td>
-									<button class="ps-setting">Paused</button>
-								</td>
-								<td>400</td>
-								<td>$4000</td>
-								<td>In Stock</td>
-								<td>$10</td>
-								<td>
-									<button data-toggle="tooltip" title="Edit"
-										class="pd-setting-ed">
-										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-									</button>
-									<button data-toggle="tooltip" title="Trash"
-										class="pd-setting-ed">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-									</button>
-								</td>
-							</tr>
+							</c:forEach>
 						</table>
 						<div class="custom-pagination">
 							<ul class="pagination">

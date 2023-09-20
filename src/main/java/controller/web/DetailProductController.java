@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ISizeColorDAO;
+import model.ColorModel;
 import model.ProductModel;
 import model.SizeColorModel;
+import model.SizeModel;
 import service.IProductService;
 import service.ISizeColorService;
 
@@ -42,8 +44,10 @@ public class DetailProductController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int productId = Integer.parseInt(request.getParameter("idProduct"));
 		ProductModel product = productSV.getProductById(productId);
-		List<SizeColorModel> lists = scService.getSizeByIdProduct(productId);
-		request.setAttribute("lists", lists);
+		List<SizeModel> sizes = scService.getSizeById(productId);
+		List<ColorModel> colors = scService.getColorById(productId);
+		request.setAttribute("sizes", sizes);
+		request.setAttribute("colors", colors);
 		request.setAttribute("product", product);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/detail.jsp");
 		rd.forward(request, response);

@@ -13,4 +13,6 @@ public interface ISizeColorService {
  void insertProductColorSize(int idColor, int idSize);
  void deleteProductColorSizeByIdProduct(int idProduct);
  void insertProductColorSizeById(int idProduct ,int idColor, int idSize);
+ List<SizeModel> getSizeById(int idP);
+ List<ColorModel> getColorById(int idP);
 }

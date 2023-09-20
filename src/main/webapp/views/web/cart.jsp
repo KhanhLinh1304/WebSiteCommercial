@@ -29,7 +29,9 @@
 								<tr>
 									<th style="text-align: center" class="cart-product">Hình
 										Ảnh</th>
-									<th style="text-align: center" class="cart-description">Tên</th>
+									<th style="text-align: center" class="cart-description">Tên Sản Phẩm</th>
+									<th style="text-align: center" class="cart-description">Kích cỡ</th>
+									<th style="text-align: center" class="cart-description">Màu</th>
 									<th style="text-align: center" class="cart-unit text-right">Giá/1sp</th>
 									<th style="text-align: center"
 										class="cart_quantity text-center">Số lượng</th>
@@ -53,7 +55,26 @@
 											</p> <!-- <small>SKU : demo_1</small>
 											<small><a href="#">Size : S, Color : Orange</a></small> -->
 										</td>
+										<td class="cart-description">
+											<p class="product-name">
+												<c:forEach var="sizes" items="${sizes}">
+													<c:if test="${list.size eq sizes.idSize}">
+														<a href="#">${sizes.nameSize}</a>
+													</c:if>
+												</c:forEach>
 
+											</p>
+										</td>
+										<td class="cart-description">
+											<p class="product-name">
+												<c:forEach var="colors" items="${colors}">
+													<c:if test="${list.color eq colors.idColor}">
+														<a href="#">${colors.nameColor}</a>
+													</c:if>
+												</c:forEach>
+
+											</p>
+										</td>
 										<td class="cart-unit">
 											<ul class="price text-right">
 												<li class="price"><fmt:formatNumber
