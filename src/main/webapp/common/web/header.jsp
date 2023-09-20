@@ -14,10 +14,10 @@
 	List<CategoryModel> categories = categorySV.getCategory(); %>
 		<div class="row">
 			<!-- HEADER-LEFT-MENU START -->
-			<div class="col-lg-3 col-md-3 col-sm-3 ">
+			<div class="col-lg-2 col-md-2 col-sm-2 ">
 				<div style="margin-top: 25px;">
 					<a href="index.html"><h1 style="font-family: Impact;">Fashion
-							Clothing</h1> </a>
+							</h1> </a>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
@@ -45,7 +45,7 @@
 			<c:set var="account" value="${sessionScope.account}"></c:set>
 			<c:choose>
 			<c:when test="${account != null}">
-			<div class="col-lg-3 col-md-3 col-sm-3 ">
+			<div class="col-lg-4 col-md-4 col-sm-4 ">
 				<ul class="list-inline" style="margin-top: 25px;">
 					<li><a
 						style="color: black; font-size: 20px; font-family: 'Times New Roman';"
