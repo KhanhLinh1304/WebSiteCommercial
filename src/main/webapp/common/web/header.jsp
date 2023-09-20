@@ -16,8 +16,12 @@
 			<!-- HEADER-LEFT-MENU START -->
 			<div class="col-lg-2 col-md-2 col-sm-2 ">
 				<div style="margin-top: 25px;">
+<<<<<<< HEAD
 					<a href="index.html"><h1 style="font-family: Impact;">Fashion
 							</h1> </a>
+=======
+					<a href="index.html"><h1 style="font-family: Impact;">Fashion</h1> </a>
+>>>>>>> a3af44eddd1295c4c8641cb4da7745e7aca55004
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
@@ -79,52 +83,14 @@
 			<div
 				class="col-lg-3 col-md-3 col-sm-12 col-xs-12 pull-right shopingcartarea">
 				<div class="shopping-cart-out pull-right">
+				<c:set var="size" value="${sessionScope.size}" ></c:set>
 					<div class="shopping-cart">
-						<a class="shop-link" href="cart.html"
+						<a class="shop-link" href="showCart"
 							title="View my shopping cart"> <i
 							class="fa fa-shopping-cart cart-icon"></i> <b>My Cart</b> <span
-							class="ajax-cart-quantity">2</span>
+							class="ajax-cart-quantity">${size}</span>
 						</a>
-						<div class="shipping-cart-overly">
-							<div class="shipping-item">
-								<span class="cross-icon"><i class="fa fa-times-circle"></i></span>
-								<div class="shipping-item-image">
-									<a href="#"><img src="img/shopping-image.jpg"
-										alt="shopping image" /></a>
-								</div>
-								<div class="shipping-item-text">
-									<span>2 <span class="pro-quan-x">x</span> <a href="#"
-										class="pro-cat">Watch</a></span> <span class="pro-quality"><a
-										href="#">S,Black</a></span>
-									<p>$22.95</p>
-								</div>
-							</div>
-							<div class="shipping-item">
-								<span class="cross-icon"><i class="fa fa-times-circle"></i></span>
-								<div class="shipping-item-image">
-									<a href="#"><img src="img/shopping-image2.jpg"
-										alt="shopping image" /></a>
-								</div>
-								<div class="shipping-item-text">
-									<span>2 <span class="pro-quan-x">x</span> <a href="#"
-										class="pro-cat">Women Bag</a></span> <span class="pro-quality"><a
-										href="#">S,Gary</a></span>
-									<p>$19.95</p>
-								</div>
-							</div>
-							<div class="shipping-total-bill">
-								<div class="cart-prices">
-									<span class="shipping-cost">$2.00</span> <span>Shipping</span>
-								</div>
-								<div class="total-shipping-prices">
-									<span class="shipping-total">$24.95</span> <span>Total</span>
-								</div>
-							</div>
-							<div class="shipping-checkout-btn">
-								<a href="checkout.html">Check out <i
-									class="fa fa-chevron-right"></i></a>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

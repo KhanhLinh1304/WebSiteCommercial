@@ -12,6 +12,11 @@ public interface IProductService {
 
 	List<ProductModel> getAllProductByIdCategory(int idCategory);
 	ProductModel getProductById(int idProduct);
+	void addProduct(String name, int price, String urlImage, int quantity, int category, int brand);
+	void deleteProduct(int idProduct);
+	void editProduct(int idProduct, String name, int price, String urlImage, int quantity, int category, int brand);
+	
+//	void AddProduct(ProductModel product);
 	
 
 }

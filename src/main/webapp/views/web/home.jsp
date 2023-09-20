@@ -10,7 +10,7 @@
 <body>
 	<!-- -------------------------- Bắt Đầu Sản Phẩm Bán Chạy--------------------------- -->
 
-	<%@include file="/common/web/slides.jsp"%>
+
 
 	<section class="main-content-section">
 		<div class="container">
@@ -31,7 +31,7 @@
 											<ul>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-search"></i></a></li>
-												<li><a href="#" title="Quick view"><i
+												<li><a href="addToCart?idProduct=${product.idP}&quantity=1" title="Quick view"><i
 														class="fa fa-shopping-cart"></i></a></li>
 												<li><a href="#" title="Quick view"><i
 														class="fa fa-retweet"></i></a></li>
@@ -55,6 +55,7 @@
 										<div class="price-box">
 											<span class="price">${product.price}</span>
 										</div>
+										
 									</div>
 								</div>
 							</li>
@@ -68,40 +69,5 @@
 		</div>
 		</div>
 	</section>
-	<!-- ---------------------Kết thúc tất cả sản phẩm------------------------ -->
-	<!-- ---------------------------- bắt đầu brand------------------------------ -->
-	<section class="brand-client-area">
-		<div class="container">
-			<div class="row">
-				<!-- BRAND-CLIENT-ROW START -->
-				<div class="brand-client-row">
-					<div class="center-title-area">
-						<h2 class="center-title">BRAND & CLIENTS</h2>
-					</div>
-					<div class="col-xs-12">
-						<div class="row">
-							<!-- CLIENT-CAROUSEL START -->
-							<div class="client-carousel">
-								<!-- CLIENT-SINGLE START -->
-								<div class="item">
-									<div class="single-client">
-										<a href="#"> <img
-											src="<c:url value='/template/web/img/brand/1.png'/>"
-											alt="brand-client" />
-										</a>
-									</div>
-								</div>
-
-								<!-- CLIENT-SINGLE END -->
-							</div>
-							<!-- CLIENT-CAROUSEL END -->
-						</div>
-					</div>
-				</div>
-				<!-- BRAND-CLIENT-ROW END -->
-			</div>
-		</div>
-	</section>
-	<!-- --------------------------------kết thúc brand---------------------------- -->
 </body>
 </html>

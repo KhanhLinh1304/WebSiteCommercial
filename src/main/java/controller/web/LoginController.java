@@ -37,8 +37,20 @@ public class LoginController extends HttpServlet {
 		String pass = request.getParameter("password");
 		AccountModel account = accountSV.loginAccount(email, pass);
 		if(account != null) {
+			if(account.getStatus().equals("disable")) {
+				request.setAttribute("lock", "<div class=\"alert alert-danger\">\n"
+						+ "Tài Khoản Của Bạn Đã Bị Khóa!\n </div>");
+				request.getRequestDispatcher("/views/login.jsp").forward(request,response);
+				
+			}
+			
+			else if(account.getRoleId() == 2) {
+				response.sendRedirect("admin-account");
+			}else {
+				response.sendRedirect("web-home");
+			}
 			session.setAttribute("account", account);
-			response.sendRedirect("web-home");
+			
 		}else {
 			 request.setAttribute("notify", "<div class=\"alert alert-danger\" role=\"alert\">\n" +
 	                    "  Tài khoản hoặc mật khẩu không đúng!\n" +

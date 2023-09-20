@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import model.AccountModel;
 
 public interface IAccountService {
@@ -9,4 +11,9 @@ public interface IAccountService {
 	void sendMailResgiter(String email, int code);
 	void forgotPassword(String email, int code);
 	void changePassword(String email, String password);
+	void updateInformation(String email, int phone, String address);
+
+	List<AccountModel> getAllAccount();
+	void ChangeStatusAccount(String email, String status);
+
 }

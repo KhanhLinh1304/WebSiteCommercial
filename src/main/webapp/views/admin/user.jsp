@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,57 +46,40 @@
 						</div>
 						<table>
 							<tr>
-								<th>Image</th>
-								<th>Product Title</th>
-								<th>Status</th>
-								<th>Purchases</th>
-								<th>Product sales</th>
-								<th>Stock</th>
-								<th>Price</th>
-								<th>Setting</th>
+								<th>email</th>
+								<th>password</th>
+								<th>phone</th>
+								<th>address</th>
+								<th>role</th>
+								<th>status</th>
+								
 							</tr>
+							<c:forEach var="account" items="${accounts}">
 							<tr>
-								<td><img src="img/new-product/5-small.jpg" alt="" /></td>
-								<td>Product Title 1</td>
+								<td>${account.email}</td>
+								<td>${account.pass}</td>
+								<td>${account.phone}</td>
+								<td>${account.address}</td>
+								<td>${account.roleId}</td>
 								<td>
-									<button class="pd-setting">Active</button>
-								</td>
-								<td>50</td>
-								<td>$750</td>
-								<td>Out Of Stock</td>
-								<td>$15</td>
-								<td>
-									<button data-toggle="tooltip" title="Edit"
+								 <c:choose>
+								   <c:when test="${account.status eq 'enable'}">  
+									<a href="admin-lockUser?email=${account.email}&status=${account.status}" style="color: white" data-toggle="tooltip" title="unlock-user"
 										class="pd-setting-ed">
-										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-									</button>
-									<button data-toggle="tooltip" title="Trash"
+										<i class="fa fa-unlock"></i>
+									</a>
+									</c:when>
+									<c:otherwise>
+									<a href="admin-lockUser?email=${account.email}&status=${account.status}&roleId=${account.roleId}" style="color: white" data-toggle="tooltip" title="lock-user"
 										class="pd-setting-ed">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-									</button>
-								</td>
-							</tr>
-							<tr>
-								<td><img src="img/new-product/7-small.jpg" alt="" /></td>
-								<td>Product Title 6</td>
-								<td>
-									<button class="ps-setting">Paused</button>
-								</td>
-								<td>400</td>
-								<td>$4000</td>
-								<td>In Stock</td>
-								<td>$10</td>
-								<td>
-									<button data-toggle="tooltip" title="Edit"
-										class="pd-setting-ed">
-										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-									</button>
-									<button data-toggle="tooltip" title="Trash"
-										class="pd-setting-ed">
-										<i class="fa fa-trash-o" aria-hidden="true"></i>
-									</button>
+										<i class="fa fa-lock" aria-hidden="true"></i>
+									</a>
+									</c:otherwise>
+									</c:choose>
 								</td>
 							</tr>
+							</c:forEach>
+							
 						</table>
 						<div class="custom-pagination">
 							<ul class="pagination">
